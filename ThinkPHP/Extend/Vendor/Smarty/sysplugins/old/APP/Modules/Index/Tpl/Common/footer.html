@@ -1,0 +1,33 @@
+    <script type="text/javascript">
+    var tourl = "{:U('Index/Index/getTXnews')}";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 页脚 -->
+    <div class="layout myfoot">
+        <p class="text-center">
+            <a href="./sitemap.html" target="_blank" class="icon-money"> 网站地图</a> 
+            <a href="{:U('./list_23')}" target="_blank" class=" icon-cog"> 修改日志</a> 
+            <a href="http://dn-mingzi.qbox.me/" target="_blank" class="icon-home"> 我的主页7.0</a> 
+            <a href="http://www.ymblog.net/public/demo/class2" target="_blank" class="icon-check"> 班级主页2.0</a>
+        </p>
+        <p class="text-center">&copy;版权所有 2014-2015 本站由ThinkPHP强力驱动，All Designed By <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a>.</p>
+    </div>
+    <script src="__PUBLIC__/js/jquery.js"></script>
+    <script src="__PUBLIC__/js/pintuer.js"></script>
+    <script src="__PUBLIC__/js/index.js"></script>
+  </body>
+</html>

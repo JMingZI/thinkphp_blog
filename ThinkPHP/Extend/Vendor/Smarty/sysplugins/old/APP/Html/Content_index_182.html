@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>CSS1 !important 语法 - Ming依然</title><meta name="keywords" content="CSS1 !important 语法，Ming依然，MingCMS，MingBlog，个人博客" /><meta name="description" content="	语法：			Selector{sRule!important;}		说明：	提升指定样式规则的应用" /><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="qc:admins" content="436125133761524776654" /><link rel="stylesheet" href="/Public/css/pintuer.css"><link rel="stylesheet" href="/Public/css/index.css"><script>    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script></head><body><!-- 导航 --><div class="container-layout mynav"><div class="line"><div class="navbar xb10 xb1-move"><div class="navbar-head"><button class="button icon-navicon" data-target="#navbar1"></button><a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a></div><div class="navbar-right hidden-s hidden-l bg-main login"><a href="javascript:;"><span id="login"></span></a><a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a><script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101209215" charset="utf-8"></script><script type="text/javascript">QC.Login({ btnId:"login" });</script></div></div></div><!-- line --><div class="line"><div class="xb8 xb1-move mymenu"><div class="navbar-body nav-navicon" id="navbar1"><ul class="nav nav-inline nav-menu"><li><a href="./"><i class=" icon-qrcode"></i><strong>首页</strong><i class=" icon-qrcode"></i></a></li><li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li><li><a href="http://mingresume.sinaapp.com" class="badge-corner" target="_blank">关于我<span style="font-size:12px;color:#fff;" class="badge bg-red">RESUME</span></a></li></ul></div></div></div><!-- line --></div><!-- 导航 --><link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" /><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script><script type="text/javascript">	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script><div class="layout mycontent"><div class="line bg"><div class="xb7 xb1-move myleft"><h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+				<a href="/list_12.html">web前端</a>&gt;</h3><div class="line"><div class="xb12 xl12"><h2 style="text-align:center;"><i class=" icon-star"></i><span style="color:#22a7f0;">[转载]</span>CSS1 !important 语法</h2><p class="text-center mycontent-info"><i class="icon-user"></i>Ming依然 | <i class="icon-calendar"></i>2015年05月23日 11点57分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/182.html"></script>) | <i class="icon-file"></i> 所属分类[web前端] | <i class="icon-tag"></i><span class="tag">csshack</span>&nbsp;<span class="tag">css</span>&nbsp;</p><p></i><h2 class="tit" style="font-size:14px;background:;">
+</h2>
+<h2 class="tit" style="font-size:14px;background:#F3F3F3;">
+	语法：
+</h2>
+<div class="cont" style="padding:10px;color:#666666;">
+	<p>
+		<strong>Selector</strong>{sRule!important;}
+	</p>
+</div>
+<h2 class="tit" style="font-size:14px;background:#F3F3F3;">
+	说明：
+</h2>
+<div class="cont" style="padding:10px;color:#666666;">
+	<strong>提升指定样式规则的应用优先权。</strong> 
+	<ul>
+		<li>
+			<span class="glight" style="color:#CC3300;">IE6及以下浏览器有个比较显式的支持问题存在，!important并不覆盖掉在同一条样式的后面的规则。请看下述代码：</span> 
+			<div class="gquote" style="margin:10px;border:1px solid #C3E1FF;">
+				<p class="gquote-tit" style="background:#DDEEFF;">
+					<strong>示例代码：</strong> 
+				</p>
+				<blockquote class="gquote-cont">
+<pre>div{color:#f00!important;color:#000;}</pre>
+				</blockquote>
+				<p class="gquote-info" style="color:#CC3300;background:#F3F9FF;">
+					在上述代码中，IE6及以下浏览器div的文本颜色为#000，!important并没有覆盖后面的规则；其它浏览器下div的文本颜色为#f00
+				</p>
+			</div>
+		</li>
+		<li>
+			<span class="glight" style="color:#CC3300;">IE6及以下浏览器要使!important生效，可用以下代码：</span> 
+			<div class="gquote" style="margin:10px;border:1px solid #C3E1FF;">
+				<p class="gquote-tit" style="background:#DDEEFF;">
+					<strong>示例代码：</strong> 
+				</p>
+				<blockquote class="gquote-cont">
+<pre>div{color:#f00!important;}
+div{color:#000;}</pre>
+				</blockquote>
+				<p class="gquote-info" style="color:#CC3300;background:#F3F9FF;">
+					在上述代码中，IE6及以下浏览器中div的文本颜色表现与其它浏览器一致，都为#f00
+				</p>
+			</div>
+		</li>
+	</ul>
+</div>
+<h2 class="tit" style="font-size:14px;background:#F3F3F3;">
+	<span style="font-weight:normal;line-height:1.5;"></span> 
+</h2>
+<p>
+	demo源码：
+<pre class="prettyprint linenums lang-js">&lt;!DOCTYPE html&gt;
+&lt;html lang="zh-cn"&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8" /&gt;
+&lt;title&gt;!important_CSS参考手册_web前端开发参考手册系列&lt;/title&gt;
+&lt;style&gt;
+.test{color:#f00!important;color:#000;}
+.test2{color:#f00!important;}
+.test2{color:#000;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="test"&gt;同一条样式内，!important将在IE6及以下浏览器中失效&lt;/div&gt;
+&lt;div class="test2"&gt;在分散的样式条目内，IE6及以下浏览器对!important的支持与其它浏览器一致&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+			</pre>
+</p></p></div><!-- mycontent-info --></div><!-- line --><div style="padding:20px;" class="ds-thread" data-thread-key="182" data-title="CSS1 !important 语法" data-url=""></div></div><div class="xb3 myright"><div class="line"><div class="xb12 xl12"><h4 class="icon-globe bg-main"> 图片新闻</h4><div class="banner myblock" data-pointer="1" data-style="border-main"><div class="carousel"><div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div></div></div></div><!-- 图片新闻 --><div class="x12"><div class="line myblock"><h4 class="icon-list bg-main"> 阅读排行</h4><ul><li><a href="/content_156.html"><i class=" icon-caret-right"></i>1解决css3翘边阴影z-ind</a><span>(阅读71)</span></li></ul><ul><li><a href="/content_152.html"><i class=" icon-caret-right"></i>2初学SEO</a><span>(阅读67)</span></li></ul><ul><li><a href="/content_165.html"><i class=" icon-caret-right"></i>3由js图片预加载想到的</a><span>(阅读47)</span></li></ul><ul><li><a href="/content_157.html"><i class=" icon-caret-right"></i>4关于meta跑到body里的问</a><span>(阅读47)</span></li></ul><ul><li><a href="/content_142.html"><i class=" icon-caret-right"></i>5web语义化的理解</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_172.html"><i class=" icon-caret-right"></i>6由新手引导特效想到的</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_163.html"><i class=" icon-caret-right"></i>7前端笔试题总结一</a><span>(阅读42)</span></li></ul><ul><li><a href="/content_143.html"><i class=" icon-caret-right"></i>8安装nodejs expres</a><span>(阅读42)</span></li></ul><ul><li><a href="/content_177.html"><i class=" icon-caret-right"></i>9ps纯手工打造旋转按钮</a><span>(阅读39)</span></li></ul><ul><li><a href="/content_147.html"><i class=" icon-caret-right"></i>10Thinkphp后台登录验证码</a><span>(阅读38)</span></li></ul></div></div><!-- read --><!-- 我的标签 --><div class="x12 mytags"><div class="line mytaglist"><a href="/list_177_67.html"><span><span style="font-size:11px;">ps制图</span>(1)</span></a><a href="/list_178_68.html"><span><span style="font-size:11px;">前端基础</span>(1)</span></a><a href="/list_178_182_69.html"><span><span style="font-size:12px;">css</span>(2)</span></a><a href="/list_179_181_70.html"><span><span style="font-size:12px;">jQuery</span>(2)</span></a><a href="/list_180_71.html"><span><span style="font-size:11px;">jQuery选择器</span>(1)</span></a><a href="/list_181_72.html"><span><span style="font-size:11px;">jquery队列</span>(1)</span></a><a href="/list_182_73.html"><span><span style="font-size:11px;">csshack</span>(1)</span></a></div></div><!-- 文章档案 --><div class="x12"><div class="line myblock"><h4 class="icon-table bg-main dangan"> 文章档案</h4><ul><li><a href="/list_182_181_180_179_178_177_176_175_174_201505.html"><i class="icon-th"></i>2015年05月 </a><span>(9篇)</span></li></ul><ul><li><a href="/list_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i>2015年04月 </a><span>(14篇)</span></li></ul><ul><li><a href="/list_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i>2015年03月 </a><span>(6篇)</span></li></ul></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-comments bg-main"> 最新评论</h4><!-- 多说最新评论 start --><div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div><!-- 多说最新评论 end --></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-user bg-main"> 访客统计</h4><p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p></div></div></div></div></div><script type="text/javascript">    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script><!-- 页脚 --><div class="layout myfoot"><p class="text-center"><a href="./sitemap.html" target="_blank" class="icon-money"> 网站地图</a><a href="/./list_23.html" target="_blank" class=" icon-cog"> 修改日志</a><a href="http://dn-mingzi.qbox.me/" target="_blank" class="icon-home"> 我的主页7.0</a><a href="http://www.ymblog.net/public/demo/class2" target="_blank" class="icon-check"> 班级主页2.0</a></p><p class="text-center">&copy;版权所有 2014-2015 本站由ThinkPHP强力驱动，All Designed By <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a>.</p></div><script src="/Public/js/jquery.js"></script><script src="/Public/js/pintuer.js"></script><script src="/Public/js/index.js"></script></body></html>

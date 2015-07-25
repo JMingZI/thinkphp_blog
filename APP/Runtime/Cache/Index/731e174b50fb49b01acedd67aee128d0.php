@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit(); $i=0; if(is_array($blog)): foreach($blog as $key=>$v): $i+=1; ?><ul><li><a href="<?php echo U('/content_'.$v['id']);?>"><i class=" icon-caret-right"></i><?php echo ($i); echo (change_substr($v["title"], 15)); ?></a><span>(阅读<?php echo ($v["clicknum"]); ?>)</span></li></ul><?php endforeach; endif; ?>

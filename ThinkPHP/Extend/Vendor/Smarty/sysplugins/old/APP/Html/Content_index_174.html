@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>瀑布流式布局jquery+css - Ming依然</title><meta name="keywords" content="瀑布流式布局jquery+css，Ming依然，MingCMS，MingBlog，个人博客" /><meta name="description" content="	对于很流行的图片瀑布流布局，一直就有很久很久的好奇心了，居于前段时间的计划，才划分到今日才能学习~" /><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="qc:admins" content="436125133761524776654" /><link rel="stylesheet" href="/Public/css/pintuer.css"><link rel="stylesheet" href="/Public/css/index.css"><script>    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script></head><body><!-- 导航 --><div class="container-layout mynav"><div class="line"><div class="navbar xb10 xb1-move"><div class="navbar-head"><button class="button icon-navicon" data-target="#navbar1"></button><a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a></div><div class="navbar-right hidden-s hidden-l bg-main login"><a href="javascript:;"><span id="login"></span></a><a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a><script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101209215" charset="utf-8"></script><script type="text/javascript">QC.Login({ btnId:"login" });</script></div></div></div><!-- line --><div class="line"><div class="xb6 xb1-move mymenu"><div class="navbar-body nav-navicon" id="navbar1"><ul class="nav nav-inline nav-menu"><li><a href="./"><i class=" icon-qrcode"></i><strong>首页</strong><i class=" icon-qrcode"></i></a></li><li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li></ul></div></div></div><!-- line --></div><!-- 导航 --><link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" /><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script><script type="text/javascript">	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script><div class="layout mycontent"><div class="line bg"><div class="xb7 xb1-move myleft"><h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+				<a href="/list_11.html">随笔</a>&gt;</h3><div class="line"><div class="xb12 xl12"><h2 style="text-align:center;"><i class=" icon-star"></i><span style="color:red;">[置顶]</span>瀑布流式布局jquery+css</h2><p class="text-center mycontent-info"><i class="icon-user"></i>Ming依然 | <i class="icon-calendar"></i>2015年05月04日 22点32分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/174.html"></script>) | <i class="icon-file"></i> 所属分类[随笔] | <i class="icon-tag"></i><span class="tag">瀑布流</span>&nbsp;</p><p></i><p>
+	<span style="font-size:14px;">对于很流行的图片瀑布流布局，一直就有很久很久的好奇心了，居于前段时间的计划，才划分到今日才能学习~果然很神奇，在这里跟大家分享。</span>
+</p>
+<p style="text-align:center;">
+	<span style="font-size:14px;"><img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150504/20150504215120_88112.png" width="400" height="208" alt="" /><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;">对于如图所示的图片布局，我做了一个demo演示，可查看，<span style="color:#E53333;"><a href="http://www.ymblog.net/public/demo/waterfall" target="_blank">DEMO</a></span><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">接下来说整体的完成步骤，第一步，完成布局；第二步，完成滚动加载。</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">对于这种布局，我想说的是，没有css方法而不用js的吗？好吧，我也觉的用css不好弄，首先，整个图片区域是居中的，又用到了绝对定位是吧，每张图片并不是我们所想象的用float就能达到的效果，请容许我画一张拙劣的图表示：</span>
+</p>
+<p style="text-align:center;">
+	<span style="font-size:14px;line-height:21px;"><img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150504/20150504215850_21914.png" alt="" /><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">第一步分为2步：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">1、当采用float:left时布局是这样的，并不是我们所希望的。但如果我们从第二行的图片开始，采用绝对定位，将第五张图片放在第一行高度最矮的也就是第一张图片下面的话，是不是就是我们所希望的样子了呢？对吧~然后每张图片都是按照这个规律用jquery去重新定位是不是就可以了呢？</span><span style="font-size:14px;line-height:21px;">来看看。</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">html主要代码：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"></span>
+</p>
+<pre class="prettyprint linenums lang-css">&lt;div class="main" id="main"&gt;
+ &lt;div class="box"&gt;
+  &lt;div class="pic"&gt;
+  &lt;img src="images/0.jpg" alt="" /&gt;
+  &lt;div class="desc"&gt;&lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>
+	<span style="font-size:14px;">其中的box就是用来放图片的box，<span style="color:#E53333;">这里要说一下的是，在设置box时，因为我们在用绝对定位时要考虑到这个高度最矮的box自身的offsetTop以及offsetLeft值，如果我们采用margin属性来隔开每张图片的话，是不是就不是很方便的去获取了呢？在这里我们应该用padding，也就是我在box盒子里面再用了一个pic盒子的目的。</span></span>
+</p>
+<p>
+	<span style="font-size:14px;"><span style="color:#E53333;"><span style="background-color:#000000;"><span style="color:#000000;background-color:#FFFFFF;"></span><span style="color:#000000;background-color:#FFFFFF;">我们</span></span></span></span><span style="font-size:14px;background-color:#FFFFFF;">最初的布局css是这样的：</span>
+</p>
+<p>
+	<span style="font-size:14px;background-color:#FFFFFF;"></span>
+</p>
+<pre class="prettyprint linenums lang-css">*{ margin:0px;padding:0px; }
+body{
+	background: #eee;
+}
+#main{
+	position: relative;
+}
+
+.box{
+	float: left;
+	padding:15px 0px 0px 15px;
+}
+
+.pic{
+	/*padding:10px;*/
+	border:1px #ccc solid;
+	border-radius: 5px;
+}
+
+.pic img{
+	width:180px;
+}
+
+.pic .desc{
+	width:180px;height:50px;
+	background: #fff;
+	border-radius: 5px;
+}</pre>
+<br />
+<p>
+	<br />
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;background-color:#FFFFFF;">2、在没有用到jquery布局的时候整个main盒子是不会居中显示的，在这里就需要进行jquery布局了，<span style="color:#E53333;">我们需要固定设置每张图片的宽度，高度自定义嘛，然后就要设置main盒子的宽度了，这样才好让他居中显示，我们需要用知道我的可视区域可以放下多少列的图片，因为我在前面定义了固定的宽度，在这里只需要用可视区域的宽度除以每个box的宽度取整即可。然后再遍历整个main盒子里面的box盒子判断，当box的索引小于第一行的图片数，因为第一行的图片在前面我们说是不需要绝对定位的，用float就好，知道了第一行的图片是哪些了，我们需要将它们的高度放进一个数组中，得到数组中的最小值，也就是高度最矮的那张图片，将第二行的一张图片放在下面，以此类推就可以了。</span></span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;background-color:#FFFFFF;">上代码：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"></span>
+</p>
+<pre class="prettyprint linenums lang-js">function waterFull(){
+//第一步，将main居中
+var boxW = $('.box').outerWidth();
+var cols = Math.floor( $(window).width() / boxW); 
+$('#main').css({
+	'width': boxW*cols + 'px',
+	'margin':'0px auto'
+});
+//声明一个数组，将第一行，也就是前cols张图片的高度加入数组
+var hArr = [];
+//第二步，将图片按规则排列，遍历所有box，为从第七张图片开始加上绝对定位
+$('#main .box').each(function(index,value){
+	if(index &lt; cols){
+		hArr.push($(value).outerHeight());
+	}else{
+		//将第cols+1张开始绝对定位到minHeight处,所以得获取高度最小的index
+		var minH = Math.min.apply(null, hArr);
+		var minHindex = $.inArray(minH, hArr);
+		$(value).css({
+			'position':'absolute',
+			'top':minH + 'px',
+			'left':boxW*minHindex 
+		});
+		//每改变一次，更新一次数组的值
+		hArr[minHindex] = minH + $(value).outerHeight();
+	}
+});
+//到这里就可以完成布局了
+}</pre>
+<span>第二步，判断滚动加载</span>
+<p>
+	<br />
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;background-color:#FFFFFF;">什么时候去加载图片呢？那就是，在你的滚动条，滚动到页面底部，一般都是页面底部，但什么时候是页面底部呢？在这里就是我们的最后一张图片，我们可以设置，在我们的最后一张图片显示一半的时候去加载图片，那怎么去判断呢？请容许我再画一张拙劣的图表示:</span>
+</p>
+<p style="text-align:center;">
+	<span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"><img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150504/20150504222619_24144.png" alt="" /><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"><span style="color:#E53333;">在图中x = y，也就是说最后一张图片的一半高度加上它offsetTop的高度就等于滚动的距离加上</span><span style="color:#E53333;">可视区域的高度</span><span style="color:#E53333;">。</span></span><span style="font-size:14px;line-height:21px;color:#E53333;background-color:#FFFFFF;">这样就知道了吧，上代码:</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;color:#E53333;background-color:#FFFFFF;"><span style="color:#000000;"></span></span>
+</p>
+<pre class="prettyprint linenums lang-js">function checkLoad(){
+	var lastBox = $('#main .box').last();
+	var lastBoxHalfHeight = lastBox.offset().top + lastBox.outerHeight()/2 ;	
+	var scrollTop = $(window).scrollTop() + $(window).height();
+	return (lastBoxHalfHeight &lt; scrollTop)?true:false;
+}</pre>
+<br />
+<pre class="prettyprint linenums lang-js">//在完成布局后，判断滚动条事件
+$(window).scroll(function(){
+	//当滚动的距离加上窗口可视区域的高度 &gt; 最后一张图片所在列的高度，也就是hArr中的最小值时，加载数据
+	if(checkLoad()){
+	  for(var i=0;i&lt;5; i++){
+		var box = $('&lt;div&gt;').addClass('box').appendTo('#main');
+		var pic = $('&lt;div&gt;').addClass('pic').appendTo(box);
+		$('&lt;img&gt;').attr("src", 'images/' + String(Math.floor(Math.random()*23)) + ".jpg").appendTo(pic);
+		$('&lt;div&gt;').addClass('desc').appendTo(pic);
+	  }
+	  waterFull();
+	}
+});</pre>
+<span style="font-size:14px;">不知道为什么又感冒了，我可是生着病学习的，值得鼓励~</span></p></div><!-- mycontent-info --></div><!-- line --><div style="padding:20px;" class="ds-thread" data-thread-key="174" data-title="瀑布流式布局jquery+css" data-url=""></div></div><div class="xb3 myright"><div class="line"><div class="xb12 xl12"><h4 class="icon-globe bg-main"> 图片新闻</h4><div class="banner myblock" data-pointer="1" data-style="border-main"><div class="carousel"><div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div></div></div></div><!-- 图片新闻 --><div class="x12"><div class="line myblock"><h4 class="icon-list bg-main"> 阅读排行</h4><ul><li><a href="/content_152.html"><i class=" icon-caret-right"></i>1初学SEO</a><span>(阅读65)</span></li></ul><ul><li><a href="/content_156.html"><i class=" icon-caret-right"></i>2解决css3翘边阴影z-ind</a><span>(阅读65)</span></li></ul><ul><li><a href="/content_165.html"><i class=" icon-caret-right"></i>3由js图片预加载想到的</a><span>(阅读45)</span></li></ul><ul><li><a href="/content_157.html"><i class=" icon-caret-right"></i>4关于meta跑到body里的问</a><span>(阅读44)</span></li></ul><ul><li><a href="/content_142.html"><i class=" icon-caret-right"></i>5web语义化的理解</a><span>(阅读39)</span></li></ul><ul><li><a href="/content_147.html"><i class=" icon-caret-right"></i>6Thinkphp后台登录验证码</a><span>(阅读37)</span></li></ul><ul><li><a href="/content_163.html"><i class=" icon-caret-right"></i>7前端笔试题总结一</a><span>(阅读37)</span></li></ul><ul><li><a href="/content_172.html"><i class=" icon-caret-right"></i>8由新手引导特效想到的</a><span>(阅读37)</span></li></ul><ul><li><a href="/content_143.html"><i class=" icon-caret-right"></i>9安装nodejs expres</a><span>(阅读36)</span></li></ul><ul><li><a href="/content_146.html"><i class=" icon-caret-right"></i>10 FTP连接 530 User</a><span>(阅读34)</span></li></ul></div></div><!-- read --><!-- 我的标签 --><div class="x12 mytags"><div class="line mytaglist"><a href="/list_142_152_36.html"><span><span style="font-size:12px;">web语义化</span>(2)</span></a><a href="/list_143_37.html"><span><span style="font-size:11px;">nodejs</span>(1)</span></a><a href="/list_144_147_38.html"><span><span style="font-size:12px;">thinkphp</span>(2)</span></a><a href="/list_145_146_39.html"><span><span style="font-size:12px;">ftp</span>(2)</span></a><a href="/list_146_40.html"><span><span style="font-size:11px;"></span>(1)</span></a><a href="/list_147_41.html"><span><span style="font-size:11px;">验证码不显示</span>(1)</span></a><a href="/list_148_149_150_151_42.html"><span><span style="font-size:14px;">jsmvc</span>(4)</span></a><a href="/list_148_149_150_151_43.html"><span><span style="font-size:14px;">实习简历</span>(4)</span></a><a href="/list_148_149_150_151_168_44.html"><span><span style="font-size:15px;">javascript</span>(5)</span></a><a href="/list_152_45.html"><span><span style="font-size:11px;">SEO</span>(1)</span></a><a href="/list_152_46.html"><span><span style="font-size:11px;">代码优化</span>(1)</span></a><a href="/list_153_154_155_156_169_47.html"><span><span style="font-size:15px;">CSS3</span>(5)</span></a><a href="/list_153_154_155_156_48.html"><span><span style="font-size:14px;">翘边阴影</span>(4)</span></a><a href="/list_157_49.html"><span><span style="font-size:11px;">编码格式</span>(1)</span></a><a href="/list_157_50.html"><span><span style="font-size:11px;">utf8无BOM</span>(1)</span></a><a href="/list_157_160_164_51.html"><span><span style="font-size:13px;">前端</span>(3)</span></a><a href="/list_158_159_166_52.html"><span><span style="font-size:13px;">博客改动记录</span>(3)</span></a><a href="/list_160_162_163_53.html"><span><span style="font-size:13px;">前端笔试题笔记</span>(3)</span></a><a href="/list_164_54.html"><span><span style="font-size:11px;">css</span>(1)</span></a><a href="/list_165_55.html"><span><span style="font-size:11px;">js预加载</span>(1)</span></a><a href="/list_165_172_56.html"><span><span style="font-size:12px;">jscookie</span>(2)</span></a><a href="/list_167_57.html"><span><span style="font-size:11px;">mylife</span>(1)</span></a><a href="/list_167_58.html"><span><span style="font-size:11px;">大学生活</span>(1)</span></a><a href="/list_169_59.html"><span><span style="font-size:11px;">网页设计</span>(1)</span></a><a href="/list_170_60.html"><span><span style="font-size:11px;">js鼠标事件</span>(1)</span></a><a href="/list_171_61.html"><span><span style="font-size:11px;">GZIP</span>(1)</span></a><a href="/list_172_62.html"><span><span style="font-size:11px;">引导特效</span>(1)</span></a><a href="/list_173_63.html"><span><span style="font-size:11px;">视差特效</span>(1)</span></a><a href="/list_174_64.html"><span><span style="font-size:11px;">瀑布流</span>(1)</span></a></div></div><!-- 文章档案 --><div class="x12"><div class="line myblock"><h4 class="icon-table bg-main dangan"> 文章档案</h4><ul><li><a href="/list_174_201505.html"><i class="icon-th"></i>2015年05月 </a><span>(1篇)</span></li></ul><ul><li><a href="/list_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i>2015年04月 </a><span>(14篇)</span></li></ul><ul><li><a href="/list_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i>2015年03月 </a><span>(6篇)</span></li></ul></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-comments bg-main"> 最新评论</h4><!-- 多说最新评论 start --><div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div><!-- 多说最新评论 end --></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-user bg-main"> 访客统计</h4><p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p></div></div></div></div></div><script type="text/javascript">    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script><!-- 页脚 --><div class="layout myfoot"><p class="text-center"><a href="./sitemap.html" target="_blank" class="icon-money"> 网站地图</a><a href="/./list_23.html" target="_blank" class=" icon-cog"> 修改日志</a><a href="http://dn-mingzi.qbox.me/" target="_blank" class="icon-home"> 我的主页7.0</a><a href="http://www.ymblog.net/public/demo/class2" target="_blank" class="icon-check"> 班级主页2.0</a></p><p class="text-center">&copy;版权所有 2014-2015 <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a></p></div><script src="/Public/js/jquery.js"></script><script src="/Public/js/pintuer.js"></script><script src="/Public/js/index.js"></script></body></html>

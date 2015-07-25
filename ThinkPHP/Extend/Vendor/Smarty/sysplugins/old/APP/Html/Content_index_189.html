@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>由css resite想到的深入理解margin及em的含义 - Ming依然</title><meta name="keywords" content="由css resite想到的深入理解margin及em的含义，Ming依然，MingCMS，MingBlog，个人博客" /><meta name="description" content="由css resite想到的深入理解margin及em的含义经常看到这样语句，*{ margin:0" /><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="qc:admins" content="436125133761524776654" /><link rel="stylesheet" href="/Public/css/pintuer.css"><link rel="stylesheet" href="/Public/css/index.css"><script>    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script></head><body><!-- 导航 --><div class="container-layout mynav"><div class="line"><div class="navbar xb10 xb1-move"><div class="navbar-head"><button class="button icon-navicon" data-target="#navbar1"></button><a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a></div><div class="navbar-right hidden-s hidden-l bg-main login"><a href="javascript:;"><span id="login"></span></a><a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a><script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101209215" charset="utf-8"></script><script type="text/javascript">QC.Login({ btnId:"login" });</script></div></div></div><!-- line --><div class="line"><div class="xb8 xb1-move mymenu"><div class="navbar-body nav-navicon" id="navbar1"><ul class="nav nav-inline nav-menu"><li><a href="./"><i class=" icon-qrcode"></i><strong>首页</strong><i class=" icon-qrcode"></i></a></li><li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li><li><a href="http://mingresume.sinaapp.com" class="badge-corner" target="_blank">关于我<span style="font-size:12px;color:#fff;" class="badge bg-red">RESUME</span></a></li></ul></div></div></div><!-- line --></div><!-- 导航 --><link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" /><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script><script type="text/javascript">	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script><div class="layout mycontent"><div class="line bg"><div class="xb7 xb1-move myleft"><h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+				<a href="/list_11.html">随笔</a>&gt;</h3><div class="line"><div class="xb12 xl12"><h2 style="text-align:center;"><i class=" icon-star"></i><span style="color:red;">[置顶]</span>由css resite想到的深入理解margin及em的含义</h2><p class="text-center mycontent-info"><i class="icon-user"></i>JMing依然 | <i class="icon-calendar"></i>2015年05月31日 13点06分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/189.html"></script>) | <i class="icon-file"></i> 所属分类[随笔] | <i class="icon-tag"></i><span class="tag">em的含义</span>&nbsp;<span class="tag">margin</span>&nbsp;<span class="tag">cssResite</span>&nbsp;<span class="tag">css</span>&nbsp;</p><p></i><span style="font-size:16px;"><strong>由css resite想到的深入理解margin及em的含义</strong></span><br />
+<br />
+<span style="font-size:16px;">经常看到这样语句，*{ margin:0px;padding:0px; }，用起来很方便吧？</span><br />
+<span style="font-size:16px;">由于学习前端的门槛低，我一直找不到区别于那些用DW的前端的所在点，我总觉得我是用记事本写代码的，我的水平及理解绝对比那些用DW的人呀更胜一筹。但区别在哪里呢？最近，我似乎明白了，拿css来说，前面的很长一段时间，我都是在横向学习css，不断的学习新的东西，制作新的美的页面，我还洋洋得意的说我前端css学的good了，最近我才恍然大悟到，这个阶段，这种表现只不过是学习CSS的一个初级阶段，我并没有进阶，并没有有多大的提高，这也正是，别人问我你能说说你在学习css这方面有哪些深刻的见解？我有吗？我没有，学习几个新属性制作几个炫酷页面就叫做深刻了吗？错的，谁都可以做出很炫很美很清爽的页面，这也就是，当你面对*{ margin:0px;padding:0px; }这行语句的时候，你会觉得非常好用，在哪里用都特别方便，特别的顺手，而你说不出个所以然来，说不出为什么要这么用，说不出你这样用了，浏览器做了哪些事情。</span><br />
+<br />
+<span style="font-size:16px;">这个道理也是昨天晚上才想明白的，作为立志与前端工程师的我们，你应该清楚，*{ margin:0px;padding:0px; }这样写真的好么？</span><br />
+<br />
+<span style="font-size:16px;">页面默认的margin值</span><br />
+<span style="font-size:16px;"> 首先要知道，默认的只具有margin值的元素有哪些，</span><br />
+<span style="font-size:16px;"> body,h1-h6,p,div,dl,dd,pre,form,hr,blockquote</span><br />
+<br />
+<span style="font-size:16px;"> body	: 默认为8px &nbsp;/ &nbsp;IE67是10px</span><br />
+<span style="font-size:16px;color:#E56600;"> h1		: margin-top/margin-bottom 0.67em</span><br />
+<span style="font-size:16px;color:#003399;"> h2		: margin-top/margin-bottom 0.83em</span><br />
+<span style="font-size:16px;color:#003399;"> h3		: margin-top/margin-bottom 1em</span><br />
+<span style="font-size:16px;color:#003399;"> h4		: margin-top/margin-bottom 1.33em</span><br />
+<span style="font-size:16px;color:#003399;"> h5		: margin-top/margin-bottom 1.67em</span><br />
+<span style="font-size:16px;color:#003399;"> h6		: margin-top/margin-bottom 2.33em </span><br />
+<span style="font-size:16px;color:#003399;"> p &nbsp; &nbsp; &nbsp; : margin-top/margin-bottom 1em</span><br />
+<span style="font-size:16px;color:#003399;"> dl		: margin-top/margin-bottom 1em</span><br />
+<span style="font-size:16px;color:#003399;"> dd		: margin-start:40px;</span><br />
+<span style="font-size:16px;color:#003399;"> pre		: margin-top/margin-bottom 1em</span><br />
+<span style="font-size:16px;color:#003399;"> form &nbsp; &nbsp;：margin-top 0em</span><br />
+<p>
+	<span style="font-size:16px;color:#003399;"> hr		: margin : 0.5em auto &nbsp; / border:1px</span>
+</p>
+<p>
+	<span style="font-size:16px;color:#003399;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:16px;color:#003399;"><img src="/Data/kindeditor/attached/image/20150531/20150531130234_37268.jpg" alt="" /><img src="/Data/kindeditor/php/../attached/image/20150531/20150531130247_89211.png" alt="" /><img src="/Data/kindeditor/php/../attached/image/20150531/20150531130248_33752.jpg" alt="" /><br />
+</span>
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>
+<span style="font-size:16px;color:#E56600;"> 默认同时具有margin和padding的元素有哪些</span><br />
+<span style="font-size:16px;color:#000000;"> ul,ol	: margin: 1em 0px</span><br />
+<span style="font-size:16px;color:#000000;"> &nbsp;padding-left:40px</span><br />
+<br />
+<span style="font-size:16px;color:#000000;"><strong>至于这里的em是什么意思，</strong><span style="color:#E53333;"><a href="http://www.w3cplus.com/css/px-to-em" target="_blank"><span style="color:#E53333;"><strong>请看这篇文章。</strong></span></a></span></span><br />
+<p>
+	<span style="font-size:16px;color:#000000;">至此，我们应该明白，*{ margin:0px;padding:0px; }耗费了多少资源？一个HTML文档有多少标签？每个标签都需要浏览器来渲染一遍这个值，多浪费是不是？</span>
+</p>
+<p>
+	<span style="font-size:16px;color:#000000;"><br />
+</span>
+</p>
+<p>
+	________________________________________________________________________________________
+</p>
+<p>
+	<br />
+</p>
+<span style="font-size:18px;color:#000000;"><strong>说完了CSS RESITE 来讨论说说margin。</strong></span><br />
+<br />
+<p>
+	<span style="font-size:16px;color:#000000;">默认的块状元素是可以随意设置margin的上下左右边距。但你是否出现类似的情况，如图，</span>
+</p>
+<p>
+	<img src="/Data/kindeditor/attached/image/20150531/20150531130037_91977.jpg" width="700" height="113" alt="" />
+</p>
+<p>
+	<br />
+</p>
+<p>
+<pre class="prettyprint linenums lang-css">.box{ width:100%;height:800px;background: #22a7f0; }
+ .box&gt;p{ margin-top: 50px; }</pre>
+</p>
+<br />
+<span style="font-size:16px;color:#000000;">一个div中，一个p标签，设置p标签margin-top:50px;后，并没有想象中的效果，而是父元素margin-top了一个值。这是为什么呢？</span><br />
+<span style="font-size:16px;color:#000000;">（这种情况在IE67中不会出现，因为IE的hasLayout渲染导致了这个“表现良好”的外观。<a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank"><span style="color:#E53333;">详细请看这篇文章</span></a>）</span><br />
+<br />
+<span style="font-size:16px;color:#000000;">其实你应该想想在这里为什么要用margin，而不用padding，我想你认为这2个效果实现是一样的，，请看这篇文章，何时用margin，何时用padding。首先你得明白，默认的块状元素都是包含有margin，border，padding的，而margin的含义，是指在存在border和padding的基础上，与外部元素的间距。那么我们这里是没有border或者padding的，如果在这里你这只border-top:1px red solid;则正常了。但真的是那样吗？如果这样，那我们每次都要附加一个border或者padding，增加代码量，多不好。其实你应该想到，这里应该使用padding-top,效果将会非常好。那么何时用margin，何时用padding？</span><br />
+<br />
+<span style="font-size:16px;color:#000000;">何时应当使用margin：</span><br />
+<span style="font-size:16px;color:#000000;">1、需要在border外侧添加空白时。</span><br />
+<span style="font-size:16px;color:#000000;">2、空白处不需要背景（色）时。</span><br />
+<span style="font-size:16px;color:#000000;">3、上下相连的两个盒子之间的空白，需要相互抵消时。如15px + 20px的margin，将得到20px的空白。（注：当两个垂直外边距相遇时，它们将形成一个外边距。合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。你可以查看W3Shool CSS外边距合并了解这个基本知识。）</span><br />
+<br />
+<span style="font-size:16px;color:#000000;">何时应当时用padding：</span><br />
+<span style="font-size:16px;color:#000000;">1、需要在border内测添加空白时。</span><br />
+<span style="font-size:16px;color:#000000;">2、空白处需要背景（色）时。</span><br />
+<span style="font-size:16px;color:#000000;">3、上下相连的两个盒子之间的空白，希望等于两者之和时。如15px + 20px的padding，将得到35px的空白。</span><br />
+<br />
+<span style="font-size:16px;color:#000000;">仔细对比下，在这里我们应该用padding吧？总结一下，margin是用来分开互不相干的元素，在这里p是div的子元素，而padding，用于元素与内容之间的间隔。</span><br />
+<br />
+<span style="font-size:16px;color:#000000;">默认的行内元素</span><br />
+<br />
+<span style="font-size:16px;color:#000000;"> span,a,strong,label &nbsp; &nbsp;margin-top/margin-bottom对内联元素没有多大实际效果，但可影响左右边距</span><br />
+<p>
+	<span style="font-size:16px;color:#000000;"> img|input|select|textarea|button|虽然是内联元素，也称之为置换对象,因为他们具有inline-block的属性，有自己的宽高，还可以定义margin的上下左右边距。</span>
+</p>
+<p>
+	<span style="font-size:16px;color:#000000;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:18px;line-height:24px;"><strong>参考：</strong></span>
+</p>
+<p>
+	<span style="font-size:18px;line-height:24px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></span>
+</p>
+<h2 style="font-size:28px;font-family:Geneva, Verdana, sans-serif;vertical-align:baseline;color:#333333;background-color:#FFFFFF;">
+	<p>
+		<span style="font-size:14px;"><a href="http://www.hicss.net/use-margin-or-padding/"><strong>用Margin还是用Padding</strong></a><strong>&nbsp;</strong></span>
+	</p>
+	<p>
+		<a href="http://www.hicss.net/do-not-tell-me-you-understand-margin/"><span style="font-size:16px;"><strong>不要告诉我你懂margin</strong></span></a>
+	</p>
+	<p>
+		<span style="font-size:14px;"><br />
+</span>
+	</p>
+	<p>
+		<br />
+	</p>
+</h2>
+<p>
+	<span style="font-size:18px;line-height:24px;"><strong><br />
+</strong></span>
+</p>
+<br />
+<br />
+<span style="font-size:16px;color:#E56600;"></span></p></div><!-- mycontent-info --></div><!-- line --><div style="padding:20px;" class="ds-thread" data-thread-key="189" data-title="由css resite想到的深入理解margin及em的含义" data-url=""></div></div><div class="xb3 myright"><div class="line"><div class="xb12 xl12"><h4 class="icon-globe bg-main"> 图片新闻</h4><div class="banner myblock" data-pointer="1" data-style="border-main"><div class="carousel"><div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div></div></div></div><!-- 图片新闻 --><div class="x12"><div class="line myblock"><h4 class="icon-list bg-main"> 阅读排行</h4><ul><li><a href="/content_156.html"><i class=" icon-caret-right"></i>1解决css3翘边阴影z-ind</a><span>(阅读74)</span></li></ul><ul><li><a href="/content_152.html"><i class=" icon-caret-right"></i>2初学SEO</a><span>(阅读69)</span></li></ul><ul><li><a href="/content_165.html"><i class=" icon-caret-right"></i>3由js图片预加载想到的</a><span>(阅读48)</span></li></ul><ul><li><a href="/content_157.html"><i class=" icon-caret-right"></i>4关于meta跑到body里的问</a><span>(阅读48)</span></li></ul><ul><li><a href="/content_172.html"><i class=" icon-caret-right"></i>5由新手引导特效想到的</a><span>(阅读44)</span></li></ul><ul><li><a href="/content_142.html"><i class=" icon-caret-right"></i>6web语义化的理解</a><span>(阅读44)</span></li></ul><ul><li><a href="/content_143.html"><i class=" icon-caret-right"></i>7安装nodejs expres</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_163.html"><i class=" icon-caret-right"></i>8前端笔试题总结一</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_177.html"><i class=" icon-caret-right"></i>9ps纯手工打造旋转按钮</a><span>(阅读41)</span></li></ul><ul><li><a href="/content_147.html"><i class=" icon-caret-right"></i>10Thinkphp后台登录验证码</a><span>(阅读39)</span></li></ul><ul><li><a href="/content_174.html"><i class=" icon-caret-right"></i>11瀑布流式布局jquery+cs</a><span>(阅读38)</span></li></ul><ul><li><a href="/content_146.html"><i class=" icon-caret-right"></i>12 FTP连接 530 User</a><span>(阅读38)</span></li></ul><ul><li><a href="/content_169.html"><i class=" icon-caret-right"></i>13由大图首页想到的</a><span>(阅读36)</span></li></ul><ul><li><a href="/content_164.html"><i class=" icon-caret-right"></i>14word-wrap与word-</a><span>(阅读36)</span></li></ul><ul><li><a href="/content_176.html"><i class=" icon-caret-right"></i>15我的影像网页设计方案</a><span>(阅读35)</span></li></ul></div></div><!-- read --><!-- 我的标签 --><div class="x12 mytags"><div class="line mytaglist"><a href="/list_177_67.html"><span><span style="font-size:11px;">ps制图</span>(1)</span></a><a href="/list_178_68.html"><span><span style="font-size:11px;">前端基础</span>(1)</span></a><a href="/list_178_182_188_189_69.html"><span><span style="font-size:14px;">css</span>(4)</span></a><a href="/list_179_181_70.html"><span><span style="font-size:12px;">jQuery</span>(2)</span></a><a href="/list_180_71.html"><span><span style="font-size:11px;">jQuery选择器</span>(1)</span></a><a href="/list_181_72.html"><span><span style="font-size:11px;">jquery队列</span>(1)</span></a><a href="/list_182_73.html"><span><span style="font-size:11px;">csshack</span>(1)</span></a><a href="/list_183_74.html"><span><span style="font-size:11px;">js对象</span>(1)</span></a><a href="/list_183_75.html"><span><span style="font-size:11px;">javascript</span>(1)</span></a><a href="/list_184_76.html"><span><span style="font-size:11px;">css3</span>(1)</span></a><a href="/list_184_77.html"><span><span style="font-size:11px;">css3圆形进度条</span>(1)</span></a><a href="/list_185_78.html"><span><span style="font-size:11px;"></span>(1)</span></a><a href="/list_187_79.html"><span><span style="font-size:11px;">前端设计</span>(1)</span></a><a href="/list_188_80.html"><span><span style="font-size:11px;">inline-block</span>(1)</span></a><a href="/list_189_81.html"><span><span style="font-size:11px;">em的含义</span>(1)</span></a><a href="/list_189_82.html"><span><span style="font-size:11px;">margin</span>(1)</span></a><a href="/list_189_83.html"><span><span style="font-size:11px;">cssResite</span>(1)</span></a></div></div><!-- 文章档案 --><div class="x12"><div class="line myblock"><h4 class="icon-table bg-main dangan"> 文章档案</h4><ul><li><a href="/list_189_188_187_184_183_182_181_180_179_178_177_176_175_174_201505.html"><i class="icon-th"></i>2015年05月 </a><span>(14篇)</span></li></ul><ul><li><a href="/list_189_188_187_184_183_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i>2015年04月 </a><span>(14篇)</span></li></ul><ul><li><a href="/list_189_188_187_184_183_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i>2015年03月 </a><span>(6篇)</span></li></ul></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-comments bg-main"> 最新评论</h4><!-- 多说最新评论 start --><div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div><!-- 多说最新评论 end --></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-user bg-main"> 访客统计</h4><p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p></div></div></div></div></div><script type="text/javascript">    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script><!-- 页脚 --><div class="layout myfoot"><p class="text-center"><a href="./sitemap.html" target="_blank" class="icon-money"> 网站地图</a><a href="/./list_23.html" target="_blank" class=" icon-cog"> 修改日志</a><a href="http://dn-mingzi.qbox.me/" target="_blank" class="icon-home"> 我的主页7.0</a><a href="http://www.ymblog.net/public/demo/class2" target="_blank" class="icon-check"> 班级主页2.0</a></p><p class="text-center">&copy;版权所有 2014-2015 本站由ThinkPHP强力驱动，All Designed By <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a>.</p></div><script src="/Public/js/jquery.js"></script><script src="/Public/js/pintuer.js"></script><script src="/Public/js/index.js"></script></body></html>

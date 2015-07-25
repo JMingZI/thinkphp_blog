@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+</head>
+<body>
+<form method="post" action="{:U(GROUP_NAME . '/Artical/zhuaquArticalHandle')}">
+	<table align="center">
+		<tr><th colspan="2"><h2>文章抓取</h2></th></tr>
+		<tr>
+			<td class="td-right">请选择要抓取的分类</td>
+			<td class="td-left">
+				<foreach name="cate" item="v">
+					<input type="checkbox" name="cate_arr[]" value="{$v.id}">{$v.name} &nbsp;&nbsp;
+				</foreach>
+			</td>
+		</tr>
+		<tr>
+			<td class="td-right">请选择每个分类抓取的篇数</td>
+			<td class="td-left">
+				<select class="input2" name="articalNum">
+					<option value="1">1</option>
+					<option value="3">3</option>
+					<option value="3">5</option>
+					<option value="3">7</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="td-right"><span style="color:red;">* 说明</span></td>
+			<td class="td-left"> 所抓取的文章内容来源：随笔（文字吧）、web前端（F2E-前端社区）、互联网（互联网那些事），PHP（php学习网）</td>
+		</tr>
+		<script type="text/javascript">
+		function on(id){
+			document.getElementById(id).style.display = 'block';
+		}
+		</script>
+		<tr><td colspan="2"><input class="input3" type="submit" value="开始抓取" onclick="on('h3_status')"></td></tr>
+	</table>
+	<h3 id="h3_status" style="color:red;display:none;margin-top:20px;margin-left:20px;">正在抓取中，过程可能缓慢，请耐心等待。</h3>
+	<if condition='ACTION_NAME eq "zhuaquArticalHandle"'>
+		<div style="margin-top:50px;width:600px;height:100%;background:;padding:10px 30px;">
+			<h3 style="color:blue;">==========抓取结果状态==========</h3>
+			<p style="color:green;">{$status}</p>
+		</div>
+	</if>
+</form>
+</body>
+</html>

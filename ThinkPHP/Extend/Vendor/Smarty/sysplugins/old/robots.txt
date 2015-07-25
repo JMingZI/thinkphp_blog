@@ -1,0 +1,16 @@
+#
+# robots.txt for ming“¿»ª
+#
+User-Agent: *
+Allow: /APP/Html/
+Disallow: /Data/
+Disallow: /ThinkPHP/
+Disallow: /APP/Class/
+Disallow: /APP/Common/
+Disallow: /APP/Modules/Admin/
+Disallow: /APP/Conf/
+Disallow: /APP/Lang/
+Disallow: /APP/Lib/
+Sitemap: http://www.ymblog.net/sitemap.xml
+
+

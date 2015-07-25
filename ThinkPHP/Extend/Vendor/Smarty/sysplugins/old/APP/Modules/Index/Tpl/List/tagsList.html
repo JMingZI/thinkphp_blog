@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>{$tagname}{$dangan_name|substr=###,0,4}{$dangan_name|substr=###,4,2} - Ming依然</title>
+    <meta name="keywords" content="{$tagname}，Ming依然，MingCMS，MingBlog，个人博客" />
+    <meta name="description" content="这是MingZI的个人博客，记录学习点滴，web前端，php学习，ps学习的过程" />
+<include file='Common:header' />
+	<div class="layout bg mylist">
+		<div class="line">
+			<div class="xb7 xb1-move myleft">
+			<foreach name='data' item='list'>
+				<div class="line border-bottom">
+		            <div class="x12 mytitle" style="border-color:{$list.attr.0.color};">
+		                <h4><strong><a href="{:U('/content_'. $list['id'])}">{$list.title}</strong></a></h4>
+		                <p>分类：<if condition='$dangan_name'>
+						<span class="tag bg-main">{$dangan_name|substr=###,0,4}年{$dangan_name|substr=###,4,2}月</span>
+						<else/>
+						<span class="tag bg-main">{$tagname}</span>
+						</if>
+						| 时间：{$list.time|date='Y/m/d H:i',###}<a href="{:U('/content_'. $list['id'])}" class="float-right"><i class="icon-share"></i> 阅读全文</a></p>
+		            </div>
+		        </div>
+		        <div class="line mysummary">
+		            <div class="xb4 xl12"><img src="{$list.imgUrl}" class="img-responsive radius" alt="{$list.title}"></div>
+		            <div class="xb8 xl12 zhaiyao"><p class="icon-quote-left">{$list.content|change_substr=###, 200}</p><small><i class="icon-comment"></i> 评论：<span class="ds-thread-count" data-thread-key="{$list.id}" data-count-type="comments"></span> | <i class="icon-eye"></i> 阅读： {$list.clicknum} | <i class="icon-user"></i> 作者：{$list.name}</small></div>
+		        </div><!-- 一篇文章结束 -->
+			</foreach>
+			<!-- <div class="page">{$page}</div> -->
+		</div><!-- xb7 -->
+		<include file='Common:right' />
+		</div><!-- line -->
+	</div><!-- mylist -->
+
+<include file='Common:footer' />

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>由大图首页想到的 - Ming依然</title>
+    <meta name="keywords" content="由大图首页想到的，Ming依然，MingCMS，MingBlog，个人博客" />
+    <meta name="description" content="	今天在浏览bootstrap优站时又有了新的发现，很多网站首页都习惯用一张大图，大图很清晰，但表面" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/css/pintuer.css">
+    <link rel="stylesheet" href="/Public/css/index.css">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  </head>
+  <body>
+    <!-- 导航 -->
+    <div class="container-layout mynav">
+      <div class="line">
+        <div class="navbar xb10 xb1-move">
+          <div class="navbar-head">
+            <button class="button icon-navicon" data-target="#navbar1"></button>
+            <a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a>
+          </div>
+          <div class="navbar-right hidden-s hidden-l bg-main login">
+            <a href="/user/login.html" target="_blank" class="icon-share"> 登录</a> <span>|</span>
+            <a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a>
+          </div>
+        </div>
+      </div><!-- line -->
+      <div class="line">
+        <div class="xb6 xb1-move mymenu">
+          <div class="navbar-body nav-navicon" id="navbar1">
+            <ul class="nav nav-inline nav-menu">
+              <li><a href="./"><i class=" icon-qrcode"></i> <strong>首页</strong> <i class=" icon-qrcode"></i></a></li>
+              <li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li>            </ul>
+          </div>
+        </div>
+      </div><!-- line -->
+    </div><!-- 导航 -->
+	<link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" />
+	<script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script>
+	<script type="text/javascript">
+	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script>
+	<div class="layout mycontent">
+		<div class="line bg">
+			<div class="xb7 xb1-move myleft">
+				<h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+								<a href="/list_11.html">随笔</a>
+					&gt;									</h3>
+			  <div class="line">
+				<div class="xb12 xl12">
+					<h2 style="text-align:center;"> <i class=" icon-star"></i> <span style="color:red;">[置顶]</span> 由大图首页想到的</h2>
+					<p class="text-center mycontent-info"><i class="icon-user"></i> ming依然 | <i class="icon-calendar"></i> 2015年04月24日 17点44分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/169.html"></script>) | <i class="icon-file"></i> 所属分类[随笔] | <i class="icon-tag"></i> <span class="tag">网页设计</span>&nbsp;<span class="tag">CSS3</span>&nbsp;</p> 
+					<p></i><p>
+	<span style="font-family:Microsoft YaHei;"><span style="font-size:14px;">今天在浏览bootstrap优站时又有了新的发现，很多网站首页都习惯用一张大图，大图很清晰，但表面的文字看起来又会感觉清晰中带点模糊，使得字体变得很清晰。就像下面的效果一样，选了一张清晰的图作为背景是远远不够的：</span></span>
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;"><strong>很清晰的图</strong></span></span>
+</p>
+<p style="text-align:center;">
+	<span><span style="font-size:14px;line-height:21px;"><img src="/Data/kindeditor/attached/image/20150424/20150424172925_70416.jpg" alt="" /><br />
+</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;"><strong>加了效果的，当然我这里加的夸张了，是为了达到这种效果：</strong><br />
+</span></span>
+</p>
+<p style="text-align:center;">
+	<span><span style="font-size:14px;line-height:21px;"><img src="/Data/kindeditor/attached/image/20150424/20150424173021_80334.png" alt="" /><br />
+</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">对不对？很明显的感觉，以前自己看到这种效果的时候都是用的PS去做的，今天在看别人的源码时发现他们用的CSS3的渐变做的，为此了解了一下，把用得着的记录了一番。<br />
+</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;color:#337FE5;"><strong>渐变分为2种：线性渐变和径向渐变</strong></span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">常用的是线性渐变，就如效果图那样的，而径向渐变是这样的，效果图如下：</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;"><img src="/Data/kindeditor/attached/image/20150424/20150424173417_92455.png" alt="" /><br />
+</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">这种效果用的地方不多吧，这里我也就没看了，知道是这么回事了，用的时候再去了解吧；</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">下面说说线性渐变，对于IE9及以下，渐变是用的滤镜实现的，而IE10及以上便支持CSS3了，可以使用渐变了。而其它三大浏览器的渐变写法：</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">
+<pre class="prettyprint linenums lang-css">/* Firefox 3.6+ */
+background: -moz-linear-gradient(left, #ace, #f96);
+/* Safari 5.1+, Chrome 10+ */
+background: -webkit-linear-gradient(left, #ace, #f96);
+/* Opera 11.10+ */
+background: -o-linear-gradient(left, #ace, #f96);</pre>
+从代码中可以看出，第一个是位置，这是一种简写，意思是从左到右的渐变，不简写是left right，于是就可以写很多了，top bottom等等；</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">另外chrome浏览器还有另外一种老式的写法</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">
+<pre class="prettyprint linenums lang-css">background: -webkit-gradient(linear,top,from(#ace),to(#f96));</pre>
+还可以为渐变方向加上角度，例如</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">
+<pre class="prettyprint linenums lang-css">background: -moz-linear-gradient(left 30deg, #ace, #f96);</pre>
+</span><span style="line-height:21px;">
+<pre class="prettyprint linenums lang-css"></pre>
+<span style="color:#000000;font-family:'Microsoft YaHei', 微软雅黑, 'Helvetica Neue', Helvetica, Arial, sans-serif;line-height:30px;font-size:14px;background-color:#FFFFFF;">当指定的角度，请记住，它是一个由水平线与渐变线产生的的角度，逆时针方向。因此，使用0deg将产生一个左到右横向梯度，而90度将创建一个从底部到顶部的垂直渐变。</span><span style="font-size:14px;color:#000000;"></span><br />
+</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">最前面的效果图实现代码是</span></span>
+</p>
+<p style="text-align:left;">
+	<span><span style="font-size:14px;line-height:21px;">
+<pre class="prettyprint linenums lang-js">background: -webkit-linear-gradient(90deg,rgba(255,255,255,0), rgba(255,255,255,1)),url(header.jpg);</pre>
+总之，我觉得这中效果肯定用得着的。</span></span>
+</p>
+<p style="text-align:left;">
+	<br />
+</p>
+<p style="text-align:left;">
+	<br />
+</p></p>
+				</div><!-- mycontent-info -->
+			  </div><!-- line -->
+				<div style="padding:20px;" class="ds-thread" data-thread-key="169" data-title="由大图首页想到的" data-url=""></div>			</div>
+            <div class="xb3 myright">
+                <div class="line">
+                    <div class="xb12 xl12">
+                        <h4 class="icon-globe bg-main"> 图片新闻</h4>
+                        <div class="banner myblock" data-pointer="1" data-style="border-main">
+                          <div class="carousel">
+                            <div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                          </div>
+                        </div>
+                    </div><!-- 图片新闻 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-list bg-main"> 阅读排行</h4>
+                        <ul>
+	<li><a href="/content_152.html"><i class=" icon-caret-right"></i> 1 初学SEO </a><span>(阅读61)</span></li>
+</ul><ul>
+	<li><a href="/content_156.html"><i class=" icon-caret-right"></i> 2 解决css3翘边阴影z-ind </a><span>(阅读60)</span></li>
+</ul><ul>
+	<li><a href="/content_157.html"><i class=" icon-caret-right"></i> 3 关于meta跑到body里的问 </a><span>(阅读44)</span></li>
+</ul><ul>
+	<li><a href="/content_165.html"><i class=" icon-caret-right"></i> 4 由js图片预加载想到的 </a><span>(阅读42)</span></li>
+</ul><ul>
+	<li><a href="/content_147.html"><i class=" icon-caret-right"></i> 5 Thinkphp后台登录验证码 </a><span>(阅读36)</span></li>
+</ul><ul>
+	<li><a href="/content_142.html"><i class=" icon-caret-right"></i> 6 web语义化的理解 </a><span>(阅读36)</span></li>
+</ul><ul>
+	<li><a href="/content_163.html"><i class=" icon-caret-right"></i> 7 前端笔试题总结一 </a><span>(阅读33)</span></li>
+</ul><ul>
+	<li><a href="/content_146.html"><i class=" icon-caret-right"></i> 8  FTP连接 530 User </a><span>(阅读33)</span></li>
+</ul><ul>
+	<li><a href="/content_143.html"><i class=" icon-caret-right"></i> 9 安装nodejs expres </a><span>(阅读33)</span></li>
+</ul><ul>
+	<li><a href="/content_151.html"><i class=" icon-caret-right"></i> 10 由“表现与数据分离”引发的 </a><span>(阅读32)</span></li>
+</ul>                      </div>
+                    </div><!-- read -->
+                    <!-- 我的标签 -->
+                    <div class="x12 mytags">
+                        <div class="line mytaglist">
+                            <a href="/list_142_152_36.html"><span><span style="font-size:12px;">web语义化</span>(2)</span></a><a href="/list_143_37.html"><span><span style="font-size:11px;">nodejs</span>(1)</span></a><a href="/list_144_147_38.html"><span><span style="font-size:12px;">thinkphp</span>(2)</span></a><a href="/list_145_146_39.html"><span><span style="font-size:12px;">ftp</span>(2)</span></a><a href="/list_146_40.html"><span><span style="font-size:11px;"></span>(1)</span></a><a href="/list_147_41.html"><span><span style="font-size:11px;">验证码不显示</span>(1)</span></a><a href="/list_148_149_150_151_42.html"><span><span style="font-size:14px;">jsmvc</span>(4)</span></a><a href="/list_148_149_150_151_43.html"><span><span style="font-size:14px;">实习简历</span>(4)</span></a><a href="/list_148_149_150_151_168_44.html"><span><span style="font-size:15px;">javascript</span>(5)</span></a><a href="/list_152_45.html"><span><span style="font-size:11px;">SEO</span>(1)</span></a><a href="/list_152_46.html"><span><span style="font-size:11px;">代码优化</span>(1)</span></a><a href="/list_153_154_155_156_169_47.html"><span><span style="font-size:15px;">CSS3</span>(5)</span></a><a href="/list_153_154_155_156_48.html"><span><span style="font-size:14px;">翘边阴影</span>(4)</span></a><a href="/list_157_49.html"><span><span style="font-size:11px;">编码格式</span>(1)</span></a><a href="/list_157_50.html"><span><span style="font-size:11px;">utf8无BOM</span>(1)</span></a><a href="/list_157_160_164_51.html"><span><span style="font-size:13px;">前端</span>(3)</span></a><a href="/list_158_159_166_52.html"><span><span style="font-size:13px;">博客改动记录</span>(3)</span></a><a href="/list_160_162_163_53.html"><span><span style="font-size:13px;">前端笔试题笔记</span>(3)</span></a><a href="/list_164_54.html"><span><span style="font-size:11px;">css</span>(1)</span></a><a href="/list_165_55.html"><span><span style="font-size:11px;">js预加载</span>(1)</span></a><a href="/list_165_56.html"><span><span style="font-size:11px;">jscookie</span>(1)</span></a><a href="/list_167_57.html"><span><span style="font-size:11px;">mylife</span>(1)</span></a><a href="/list_167_58.html"><span><span style="font-size:11px;">大学生活</span>(1)</span></a><a href="/list_169_59.html"><span><span style="font-size:11px;">网页设计</span>(1)</span></a>                        </div>
+                    </div>
+                    <!-- 文章档案 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-table bg-main dangan"> 文章档案</h4>
+                        <ul>
+<li><a href="/list_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i> 2015年04月 </a><span>(11篇)</span></li>
+</ul><ul>
+<li><a href="/list_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i> 2015年03月 </a><span>(6篇)</span></li>
+</ul>                      </div>
+                    </div>
+                    <!-- 最新评论 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-comments bg-main"> 最新评论</h4>
+                        <!-- 多说最新评论 start -->
+                        <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+                        <!-- 多说最新评论 end -->
+                      </div>
+                    </div>
+                    <!-- 最新评论 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-user bg-main"> 访客统计</h4>
+                        <p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+	</div>
+    <script type="text/javascript">
+    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 页脚 -->
+    <div class="layout myfoot bg">
+        <p class="text-center"><a href="./sitemap.html" target="_blank">网站地图</a> <a href="/./list_23.html" target="_blank">修改日志</a> <a href="http://dn-mingzi.qbox.me/" target="_blank">我的主页</a></p>
+        <p class="text-center">&copy;版权所有 2014-2015 <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a></p>
+    </div>
+    <script src="/Public/js/jquery.js"></script>
+    <script src="/Public/js/pintuer.js"></script>
+    <script src="/Public/js/index.js"></script>
+  </body>
+</html>

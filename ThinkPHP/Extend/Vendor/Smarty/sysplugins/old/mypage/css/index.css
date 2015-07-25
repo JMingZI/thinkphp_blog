@@ -1,0 +1,50 @@
+/**{ text-align: center; }*/
+body{ overflow: hidden; }
+.one{ background:url(../images/nav_bg.jpg) no-repeat;background-size:cover; }
+.nav{ width:50px;height:520px;margin:0px auto;position: relative;top:-100%;background:rgba(255,255,255,0.7)!important; 
+	filter:Alpha(opacity=70);background: #fff;
+}
+.nav ul{ padding-top: 20px;position: relative; }
+.nav ul li{ width:100px;height:120px;font-size: 20px;border: 0px blue solid;color:#333;position: relative;
+}
+.nav ul li a{  
+	width:52px;height:120px;font-size: 20px;background:;border-bottom: 0px red solid; color:#666;float: left; 
+	padding-top:35px;margin-left:;opacity: 0;box-shadow: -1px -1px 1px black;
+}
+/*.nav ul li a:hover{ color:white; }*/
+.nav ul li span{ float: left;padding:30px 13px;border:0px #333 solid;color:white;color:#333; }
+.nav ul li span:hover{ cursor: pointer; }
+
+/*第二个盒子*/
+.two{ background: #264348;padding-left:10px;padding-right: 10px; }
+.two h3{ color:#ccc;margin-top: 40px;border-bottom: 1px #ccc dashed; }
+.two .tag{ margin-right:5px; }
+.progress{ margin-top: 20px;margin-bottom: 5px; }
+.my_info{ opacity: 0;position: relative;bottom: -100%; }
+.two p{ color:#ddd;text-indent:0.5em;line-height: 30px; }
+
+/*第三个盒子*/
+.my_content{ width:950px;height:550px;margin:0px auto;padding-left: 80px;background:url(../images/bg.png) bottom center no-repeat; }
+.my_content h2{margin-left: -80px;margin-bottom:10px;height:40px;font-weight: bold;color: #777;text-shadow:0px 0px 1px black;border-bottom: 1px #777 dashed;}
+.list{ width:220px;height:240px;background: ;border:1px #ccc solid;float: left;
+	margin:5px 30px;border-radius: 3px 3px 5px 5px; }
+.list .img{ width:218px;height:150px;overflow: hidden; }
+.list img{ width:218px;height:150px;position: relative; }
+.list .info{ width:218px;height:88px;border-radius: 0px 0px 5px 5px;background: white;padding:10px;font-family: '黑体';color:#666;border-top: 1px #ddd solid }
+
+.list:hover{ border-color: #22a7f0; }
+
+.blur {	
+    filter: url(blur.svg#blur); /* FireFox, Chrome, Opera */
+    
+    -webkit-filter: blur(2px); /* Chrome, Opera */
+       -moz-filter: blur(2px);
+        -ms-filter: blur(2px);    
+            filter: blur(2px);
+    
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1, MakeShadow=false); /* IE6~IE9 */
+}
+
+
+
+

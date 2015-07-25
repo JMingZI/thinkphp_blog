@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>IE6+未知尺寸元素水平垂直居中 - Ming依然</title><meta name="keywords" content="IE6+未知尺寸元素水平垂直居中，Ming依然，MingCMS，MingBlog，个人博客" /><meta name="description" content="	首先讨论在IE8以上（也就是支持伪元素after的基础上）的2种情况	当有一段不知道长度大小的文字" /><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="qc:admins" content="436125133761524776654" /><link rel="stylesheet" href="/Public/css/pintuer.css"><link rel="stylesheet" href="/Public/css/index.css"><script>    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script></head><body><!-- 导航 --><div class="container-layout mynav"><div class="line"><div class="navbar xb10 xb1-move"><div class="navbar-head"><button class="button icon-navicon" data-target="#navbar1"></button><a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a></div><div class="navbar-right hidden-s hidden-l bg-main login"><a href="javascript:;"><span id="login"></span></a><a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a><script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101209215" charset="utf-8"></script><script type="text/javascript">QC.Login({ btnId:"login" });</script></div></div></div><!-- line --><div class="line"><div class="xb8 xb1-move mymenu"><div class="navbar-body nav-navicon" id="navbar1"><ul class="nav nav-inline nav-menu"><li><a href="./"><i class=" icon-qrcode"></i><strong>首页</strong><i class=" icon-qrcode"></i></a></li><li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li><li><a href="http://mingresume.sinaapp.com" class="badge-corner" target="_blank">关于我<span style="font-size:12px;color:#fff;" class="badge bg-red">RESUME</span></a></li></ul></div></div></div><!-- line --></div><!-- 导航 --><link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" /><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script><script type="text/javascript">	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script><div class="layout mycontent"><div class="line bg"><div class="xb7 xb1-move myleft"><h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+				<a href="/list_12.html">web前端</a>&gt;</h3><div class="line"><div class="xb12 xl12"><h2 style="text-align:center;"><i class=" icon-star"></i><span style="color:red;">[置顶]</span>IE6+未知尺寸元素水平垂直居中</h2><p class="text-center mycontent-info"><i class="icon-user"></i>Ming依然 | <i class="icon-calendar"></i>2015年05月28日 22点06分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/188.html"></script>) | <i class="icon-file"></i> 所属分类[web前端] | <i class="icon-tag"></i><span class="tag">inline-block</span>&nbsp;<span class="tag">css</span>&nbsp;</p><p></i><h3 style="font-family:微软雅黑;">
+	首先讨论在IE8以上（也就是支持伪元素after的基础上）的2种情况
+</h3>
+<p style="font-family:微软雅黑;font-size:medium;">
+	当有一段不知道长度大小的文字在你面前，你需要使它垂直居中的时候，你肯定会想到：<br />
+1、text-align:center;水平居中没错。<br />
+2、垂直居中，可以使用绝对定位，margin-left,margin-top负值在这里可以实现吗？答案是不可以，因为文字多少你不知道。那么绝对定位就不好使了。<br />
+3、还有人应该想到line-height:;这种情况下但是如果这个文字换行了呢？所以也不行。
+</p>
+<p style="font-family:微软雅黑;font-size:medium;">
+	那么接下来就是要说的这个问题了，使用display:inline-block;可以实现兼容IE6以上。
+</p>
+<div class="desc" style="font-family:微软雅黑;font-size:medium;background:#AAAAAA;">
+	<p>
+		那么什么是display:inline-block;？我们来了解了解。。。<br />
+早在 IE 5.5 就开始支持 inline-block了，同时我们知道 IE6、7 中 display:inline-block 是可以触发 hasLayout 的，触发了 hasLayout 的元素表现出来的特征就是一个独立的矩形容器，可以设置宽高而且不受外部元素的影响。
+	</p>
+	<p>
+		：inline-block 后的元素创建了一个行级的块容器，该元素内部（内容）被格式化成一个块元素，同时元素本身则被格式化成一个行内元素。直白一点的意思就是：inline-block 的元素既具有 block 元素可以设置宽高的特性，同时又具有 inline 元素默认不换行的特性。当然不仅仅是这些特性，比如 inline-block 元素也可以设置 vertical-align 属性。简而言之： inline-block 后的元素就是一个格式化为行内元素的块容器( Block container )
+	</p>
+</div>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:16px;">请看IE8以上使行内元素垂直居中的效果。。。</span>
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528215907_55867.png" alt="" />
+</p>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:medium;line-height:normal;">代码如下：</span>
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528215713_27800.png" width="700" height="167" alt="" />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<h3 style="font-family:微软雅黑;">
+	当元素发生换行之后，应该这样处理。。。
+</h3>
+<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528220025_31879.png" alt="" /><span></span>
+<p>
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:medium;line-height:normal;">代码如下：</span>
+</p>
+<p style="font-family:微软雅黑;">
+	<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528215713_80169.png" width="700" height="231" alt="" />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:medium;line-height:normal;">为什么要这样处理呢？你应该想到，既然是换行了，那就是说明我的这个伪元素after和这段文字不在一个line box里了，应该被挤下去了，如图：</span>
+</p>
+<p style="font-family:微软雅黑;">
+	<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528215714_62388.png" alt="" />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;font-size:medium;">
+	有人肯定也已经发现，width已经被设置为0了，应该不会被挤下去啊？这就涉及到了inline-block使元素之间产生间隙，而IE6、7，IE8（Q）中：inline 元素会产生空隙，block 元素不会产生空隙。也就是说，因为这个间隙的存在，就把我这个伪元素参照物给挤下去了。
+</p>
+<p style="font-family:微软雅黑;font-size:medium;">
+	在我们这里的处理是，将父级的字体设置为0，将元素的字体设置为正常，就可以去除inline-block产生的间隙。
+</p>
+<p style="font-family:微软雅黑;font-size:medium;background:#AAAAAA;">
+	产生间隙的根本原因是：HTML 中的换行符、空格符、制表符等产生了空白符，而这些归根结底都是字符，那么它们的大小都是受 font-size 来控制的，字体大小直接导致 inline 或者 inline-block 后元素之间空隙的大小，把 inline-block 元素间的空隙认为总是某个固定大小是错误的。
+</p>
+<p style="font-family:微软雅黑;font-size:medium;">
+	这只是在IE8以上的浏览器上，但是，IE8 以上支持 font-size:0; IE6、7 inline 元素 inline-block 后设置 font-size:0 始终有 1px 的空隙。这里就要用到letter-spacing 和 word-spacing了。<br />
+letter-spacing : normal | length （检索或设置对象中的文字之间的间隔）<br />
+word-spacing : normal | length（检索或设置对象中的单词之间插入的空隔）
+</p>
+<p style="font-family:微软雅黑;font-size:medium;">
+	Safari 中 letter-spacing 负值的绝对值大于空隙大小后，内部会发生重叠。而word-spacing不会。那就好办了。
+</p>
+<p style="font-family:微软雅黑;font-size:medium;color:red;">
+	去除 inline-block 空隙终极解决方案
+</p>
+<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528215714_93916.png" alt="" /><span></span>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:medium;line-height:normal;">解决了inline-block的间隙问题，接着前面说的IE8及以下不支持伪元素的办法，我们可以在元素p后设置一个隐藏的span来当作参照物即可。</span>
+</p>
+<p style="font-family:微软雅黑;">
+	<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528220310_73149.png" width="700" height="95" alt="" />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:medium;line-height:normal;">CSS代码如下：</span>
+</p>
+<p style="font-family:微软雅黑;">
+	<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528215717_13919.png" alt="" />
+</p>
+<p>
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<h3 style="font-family:微软雅黑;color:red;">
+	终极css代码兼容所有的：
+</h3>
+<img src="http://www.ymblog.net/Data/kindeditor/attached/image/20150528/20150528215717_70526.jpg" width="700" height="498" alt="" /><span></span>
+<p>
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<br />
+</p>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:16px;">参考：</span>
+</p>
+<p style="font-family:微软雅黑;">
+	<span style="font-size:16px;"><a href="http://demo.doyoe.com/css/alignment/"><span style="color:#E53333;">未知尺寸元素水平垂直居中</span></a><br />
+<a href="http://www.iyunlu.com/view/css-xhtml/64.html"><span style="color:#E53333;">inline-block 前世今生</span></a></span>
+</p></p></div><!-- mycontent-info --></div><!-- line --><div style="padding:20px;" class="ds-thread" data-thread-key="188" data-title="IE6+未知尺寸元素水平垂直居中" data-url=""></div></div><div class="xb3 myright"><div class="line"><div class="xb12 xl12"><h4 class="icon-globe bg-main"> 图片新闻</h4><div class="banner myblock" data-pointer="1" data-style="border-main"><div class="carousel"><div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div></div></div></div><!-- 图片新闻 --><div class="x12"><div class="line myblock"><h4 class="icon-list bg-main"> 阅读排行</h4><ul><li><a href="/content_156.html"><i class=" icon-caret-right"></i>1解决css3翘边阴影z-ind</a><span>(阅读74)</span></li></ul><ul><li><a href="/content_152.html"><i class=" icon-caret-right"></i>2初学SEO</a><span>(阅读68)</span></li></ul><ul><li><a href="/content_165.html"><i class=" icon-caret-right"></i>3由js图片预加载想到的</a><span>(阅读48)</span></li></ul><ul><li><a href="/content_157.html"><i class=" icon-caret-right"></i>4关于meta跑到body里的问</a><span>(阅读48)</span></li></ul><ul><li><a href="/content_172.html"><i class=" icon-caret-right"></i>5由新手引导特效想到的</a><span>(阅读44)</span></li></ul><ul><li><a href="/content_163.html"><i class=" icon-caret-right"></i>6前端笔试题总结一</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_142.html"><i class=" icon-caret-right"></i>7web语义化的理解</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_143.html"><i class=" icon-caret-right"></i>8安装nodejs expres</a><span>(阅读42)</span></li></ul><ul><li><a href="/content_177.html"><i class=" icon-caret-right"></i>9ps纯手工打造旋转按钮</a><span>(阅读40)</span></li></ul><ul><li><a href="/content_147.html"><i class=" icon-caret-right"></i>10Thinkphp后台登录验证码</a><span>(阅读39)</span></li></ul><ul><li><a href="/content_174.html"><i class=" icon-caret-right"></i>11瀑布流式布局jquery+cs</a><span>(阅读38)</span></li></ul><ul><li><a href="/content_146.html"><i class=" icon-caret-right"></i>12 FTP连接 530 User</a><span>(阅读38)</span></li></ul><ul><li><a href="/content_169.html"><i class=" icon-caret-right"></i>13由大图首页想到的</a><span>(阅读36)</span></li></ul><ul><li><a href="/content_170.html"><i class=" icon-caret-right"></i>14js判断鼠标滚动方向的办法</a><span>(阅读35)</span></li></ul><ul><li><a href="/content_164.html"><i class=" icon-caret-right"></i>15word-wrap与word-</a><span>(阅读35)</span></li></ul></div></div><!-- read --><!-- 我的标签 --><div class="x12 mytags"><div class="line mytaglist"><a href="/list_177_67.html"><span><span style="font-size:11px;">ps制图</span>(1)</span></a><a href="/list_178_68.html"><span><span style="font-size:11px;">前端基础</span>(1)</span></a><a href="/list_178_182_188_69.html"><span><span style="font-size:13px;">css</span>(3)</span></a><a href="/list_179_181_70.html"><span><span style="font-size:12px;">jQuery</span>(2)</span></a><a href="/list_180_71.html"><span><span style="font-size:11px;">jQuery选择器</span>(1)</span></a><a href="/list_181_72.html"><span><span style="font-size:11px;">jquery队列</span>(1)</span></a><a href="/list_182_73.html"><span><span style="font-size:11px;">csshack</span>(1)</span></a><a href="/list_183_74.html"><span><span style="font-size:11px;">js对象</span>(1)</span></a><a href="/list_183_75.html"><span><span style="font-size:11px;">javascript</span>(1)</span></a><a href="/list_184_76.html"><span><span style="font-size:11px;">css3</span>(1)</span></a><a href="/list_184_77.html"><span><span style="font-size:11px;">css3圆形进度条</span>(1)</span></a><a href="/list_185_78.html"><span><span style="font-size:11px;"></span>(1)</span></a><a href="/list_187_79.html"><span><span style="font-size:11px;">前端设计</span>(1)</span></a><a href="/list_188_80.html"><span><span style="font-size:11px;">inline-block</span>(1)</span></a></div></div><!-- 文章档案 --><div class="x12"><div class="line myblock"><h4 class="icon-table bg-main dangan"> 文章档案</h4><ul><li><a href="/list_188_187_184_183_182_181_180_179_178_177_176_175_174_201505.html"><i class="icon-th"></i>2015年05月 </a><span>(13篇)</span></li></ul><ul><li><a href="/list_188_187_184_183_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i>2015年04月 </a><span>(14篇)</span></li></ul><ul><li><a href="/list_188_187_184_183_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i>2015年03月 </a><span>(6篇)</span></li></ul></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-comments bg-main"> 最新评论</h4><!-- 多说最新评论 start --><div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div><!-- 多说最新评论 end --></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-user bg-main"> 访客统计</h4><p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p></div></div></div></div></div><script type="text/javascript">    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script><!-- 页脚 --><div class="layout myfoot"><p class="text-center"><a href="./sitemap.html" target="_blank" class="icon-money"> 网站地图</a><a href="/./list_23.html" target="_blank" class=" icon-cog"> 修改日志</a><a href="http://dn-mingzi.qbox.me/" target="_blank" class="icon-home"> 我的主页7.0</a><a href="http://www.ymblog.net/public/demo/class2" target="_blank" class="icon-check"> 班级主页2.0</a></p><p class="text-center">&copy;版权所有 2014-2015 本站由ThinkPHP强力驱动，All Designed By <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a>.</p></div><script src="/Public/js/jquery.js"></script><script src="/Public/js/pintuer.js"></script><script src="/Public/js/index.js"></script></body></html>

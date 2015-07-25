@@ -1,0 +1,7 @@
+<php>$i=0;</php>
+<foreach name='blog' item='v'>
+<php>$i+=1;</php>
+<ul>
+	<li><a href="{:U('/content_'.$v['id'])}"><i class=" icon-caret-right"></i> {$i} {$v.title|change_substr=###, 15} </a><span>(阅读{$v.clicknum})</span></li>
+</ul>
+</foreach>

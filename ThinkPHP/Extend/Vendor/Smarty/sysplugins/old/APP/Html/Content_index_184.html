@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>css3圆形百分比进度条的实现原理 - Ming依然</title><meta name="keywords" content="css3圆形百分比进度条的实现原理，Ming依然，MingCMS，MingBlog，个人博客" /><meta name="description" content="	今天早上起来在查看jquery插件机制的时候，一不小心点进了css3圆形百分比进度条的相关文章，于" /><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="qc:admins" content="436125133761524776654" /><link rel="stylesheet" href="/Public/css/pintuer.css"><link rel="stylesheet" href="/Public/css/index.css"><script>    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script></head><body><!-- 导航 --><div class="container-layout mynav"><div class="line"><div class="navbar xb10 xb1-move"><div class="navbar-head"><button class="button icon-navicon" data-target="#navbar1"></button><a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a></div><div class="navbar-right hidden-s hidden-l bg-main login"><a href="javascript:;"><span id="login"></span></a><a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a><script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101209215" charset="utf-8"></script><script type="text/javascript">QC.Login({ btnId:"login" });</script></div></div></div><!-- line --><div class="line"><div class="xb8 xb1-move mymenu"><div class="navbar-body nav-navicon" id="navbar1"><ul class="nav nav-inline nav-menu"><li><a href="./"><i class=" icon-qrcode"></i><strong>首页</strong><i class=" icon-qrcode"></i></a></li><li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li><li><a href="http://mingresume.sinaapp.com" class="badge-corner" target="_blank">关于我<span style="font-size:12px;color:#fff;" class="badge bg-red">RESUME</span></a></li></ul></div></div></div><!-- line --></div><!-- 导航 --><link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" /><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script><script type="text/javascript">	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script><div class="layout mycontent"><div class="line bg"><div class="xb7 xb1-move myleft"><h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+				<a href="/list_12.html">web前端</a>&gt;</h3><div class="line"><div class="xb12 xl12"><h2 style="text-align:center;"><i class=" icon-star"></i><span style="color:red;">[置顶]</span>css3圆形百分比进度条的实现原理</h2><p class="text-center mycontent-info"><i class="icon-user"></i>Ming依然 | <i class="icon-calendar"></i>2015年05月26日 10点24分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/184.html"></script>) | <i class="icon-file"></i> 所属分类[web前端] | <i class="icon-tag"></i><span class="tag">css3</span>&nbsp;<span class="tag">css3圆形进度条</span>&nbsp;</p><p></i><p>
+	<span style="font-size:14px;">今天早上起来在查看jquery插件机制的时候，一不小心点进了<span style="color:#006600;">css3圆形百分比进度条</span>的相关文章，于是一发不可收拾，开始折腾了。。。<img src="http://www.ymblog.net/Data/kindeditor/plugins/emoticons/images/13.gif" border="0" alt="" /></span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">关于圆形圈的实现，想必用2个圆心相同，半径不同的div即可实现，来画个图：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><img src="/Data/kindeditor/attached/image/20150526/20150526100815_61984.jpg" alt="" /><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">&lt;!--请不要嘲笑我拙劣的画笔。--&gt;</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">黄色的就是圆形的进度条，大家会看到，这是一个整圆，并不能用transform：rotate（）；来实现角度的旋转，这就对了，因为还要用到另外一个不常见的<span style="background-color:#FF9900;">css属性clip</span>。</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;background-color:#FF9900;">原理：每个圆形的进度条都是由2个半圆构成的，进度为100%，旋转的角度为360度，那么每1%对应的就是3.6度，当旋转的角度小于180度时，左边的半圆是不需要旋转的，当大于180度时，右边的半圆直接旋转180度，左边的半圆旋转<span style="background-color:#EE33EE;">此时的度数-180度。<span style="background-color:#FF9900;">这样就可以实现了。</span></span></span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">说完原理再来说说clip这个属性，我参考了2篇文章，都写得不错。</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><a href="http://www.w3cplus.com/css3/clip.html" target="_blank">http://www.w3cplus.com/css3/clip.html</a><br />
+</span>
+</p>
+<p>
+	<br />
+</p>
+<p>
+	<a href="http://www.zhangxinxu.com/wordpress/2011/04/css-clip-rect/" target="_blank">http://www.zhangxinxu.com/wordpress/2011/04/css-clip-rect/</a>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">总的来说，clip属性我们一般只是用来切图，就和css，sprite用法一样，将想要显示的图片或者区域展示出来，用法是：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"> </span>
+</p>
+<pre class="prettyprint linenums lang-css">clip: rect(&lt;top&gt;, &lt;right&gt;, &lt;bottom&gt;, &lt;left&gt;);</pre>
+<p>
+	<span style="font-size:14px;"></span>
+</p>
+<p>
+	<span style="font-size:14px;">它的兼容性是在ie8+，ie8以下的写法就是在各属性top,right等之间不要加逗号，并放在加了逗号的写法前面，如下：</span>
+</p>
+<p>
+	<span style="font-size:14px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;">
+<pre class="prettyprint linenums lang-css">.my-element {
+  position: absolute;
+  clip: rect(10px  350px  170px  0); /* IE4 to IE7 */
+  clip: rect(10px, 350px, 170px, 0); /* IE8+ &amp; other browsers */
+}</pre>
+<br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;"><br />
+</span>
+</p>
+<span style="font-size:14px;">
+<pre class="prettyprint linenums lang-css"><span style="font-family:'sans serif', tahoma, verdana, helvetica;">这里要注意的2点是：
+ /*当top和left取值为auto时，相当于0
+ *当bottom和right取值为auto时，相当于100%
+ */ </span></pre>
+</span>
+<p>
+	<span style="font-size:14px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;">接下来就直接上完整的代码了。。。可直接copy运行。</span>
+</p>
+<p>
+	<span style="font-size:14px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;">
+<pre class="prettyprint linenums lang-js">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;css3+jquery圆形进度条&lt;/title&gt;
+&lt;meta charset="utf-8" /&gt;
+&lt;script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"&gt;&lt;/script&gt;
+&lt;style type="text/css"&gt;
+.circle {
+width: 200px;
+height: 200px;  
+position: absolute;
+border-radius: 50%;
+background: #0cc;
+}
+.pie_left, .pie_right {
+width: 200px; 
+height: 200px;
+position: absolute;
+top: 0;left: 0;
+}
+.left, .right {
+display: block;
+width:200px; 
+height:200px;
+background:#00aacc;
+border-radius: 50%;
+position: absolute;
+top: 0;
+left: 0;
+/*transform: rotate(30deg);*/
+}
+.pie_right, .right {
+clip:rect(0,auto,auto,100px);
+}
+.pie_left, .left {
+clip:rect(0,100px,auto,0);
+}
+/*
+*当top和left取值为auto时，相当于0
+*当bottom和right取值为auto时，相当于100%
+*/
+.mask {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+left: 25px;
+top: 25px;
+background: #FFF;
+position: absolute;
+text-align: center;
+line-height: 150px;
+font-size: 16px;
+}
+
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="circle"&gt;
+&lt;div class="pie_left"&gt;&lt;div class="left"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="pie_right"&gt;&lt;div class="right"&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class="mask"&gt;&lt;span&gt;10&lt;/span&gt;%&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+$(function() {
+$('.circle').each(function(index, el) {
+var num = $(this).find('span').text() * 3.6;
+if (num&lt;=180) {
+$(this).find('.right').css('transform', "rotate(" + num + "deg)");
+} else {
+$(this).find('.right').css('transform', "rotate(180deg)");
+$(this).find('.left').css('transform', "rotate(" + (num - 180) + "deg)");
+};
+});
+});
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</span>
+</p>
+<p>
+	<br />
+</p></p></div><!-- mycontent-info --></div><!-- line --><div style="padding:20px;" class="ds-thread" data-thread-key="184" data-title="css3圆形百分比进度条的实现原理" data-url=""></div></div><div class="xb3 myright"><div class="line"><div class="xb12 xl12"><h4 class="icon-globe bg-main"> 图片新闻</h4><div class="banner myblock" data-pointer="1" data-style="border-main"><div class="carousel"><div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div></div></div></div><!-- 图片新闻 --><div class="x12"><div class="line myblock"><h4 class="icon-list bg-main"> 阅读排行</h4><ul><li><a href="/content_156.html"><i class=" icon-caret-right"></i>1解决css3翘边阴影z-ind</a><span>(阅读72)</span></li></ul><ul><li><a href="/content_152.html"><i class=" icon-caret-right"></i>2初学SEO</a><span>(阅读68)</span></li></ul><ul><li><a href="/content_165.html"><i class=" icon-caret-right"></i>3由js图片预加载想到的</a><span>(阅读48)</span></li></ul><ul><li><a href="/content_157.html"><i class=" icon-caret-right"></i>4关于meta跑到body里的问</a><span>(阅读48)</span></li></ul><ul><li><a href="/content_172.html"><i class=" icon-caret-right"></i>5由新手引导特效想到的</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_142.html"><i class=" icon-caret-right"></i>6web语义化的理解</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_163.html"><i class=" icon-caret-right"></i>7前端笔试题总结一</a><span>(阅读43)</span></li></ul><ul><li><a href="/content_143.html"><i class=" icon-caret-right"></i>8安装nodejs expres</a><span>(阅读42)</span></li></ul><ul><li><a href="/content_147.html"><i class=" icon-caret-right"></i>9Thinkphp后台登录验证码</a><span>(阅读39)</span></li></ul><ul><li><a href="/content_177.html"><i class=" icon-caret-right"></i>10ps纯手工打造旋转按钮</a><span>(阅读39)</span></li></ul></div></div><!-- read --><!-- 我的标签 --><div class="x12 mytags"><div class="line mytaglist"><a href="/list_177_67.html"><span><span style="font-size:11px;">ps制图</span>(1)</span></a><a href="/list_178_68.html"><span><span style="font-size:11px;">前端基础</span>(1)</span></a><a href="/list_178_182_69.html"><span><span style="font-size:12px;">css</span>(2)</span></a><a href="/list_179_181_70.html"><span><span style="font-size:12px;">jQuery</span>(2)</span></a><a href="/list_180_71.html"><span><span style="font-size:11px;">jQuery选择器</span>(1)</span></a><a href="/list_181_72.html"><span><span style="font-size:11px;">jquery队列</span>(1)</span></a><a href="/list_182_73.html"><span><span style="font-size:11px;">csshack</span>(1)</span></a><a href="/list_183_74.html"><span><span style="font-size:11px;">js对象</span>(1)</span></a><a href="/list_183_75.html"><span><span style="font-size:11px;">javascript</span>(1)</span></a><a href="/list_184_76.html"><span><span style="font-size:11px;">css3</span>(1)</span></a><a href="/list_184_77.html"><span><span style="font-size:11px;">css3圆形进度条</span>(1)</span></a></div></div><!-- 文章档案 --><div class="x12"><div class="line myblock"><h4 class="icon-table bg-main dangan"> 文章档案</h4><ul><li><a href="/list_184_183_182_181_180_179_178_177_176_175_174_201505.html"><i class="icon-th"></i>2015年05月 </a><span>(11篇)</span></li></ul><ul><li><a href="/list_184_183_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i>2015年04月 </a><span>(14篇)</span></li></ul><ul><li><a href="/list_184_183_182_181_180_179_178_177_176_175_174_201505172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i>2015年03月 </a><span>(6篇)</span></li></ul></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-comments bg-main"> 最新评论</h4><!-- 多说最新评论 start --><div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div><!-- 多说最新评论 end --></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-user bg-main"> 访客统计</h4><p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p></div></div></div></div></div><script type="text/javascript">    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script><!-- 页脚 --><div class="layout myfoot"><p class="text-center"><a href="./sitemap.html" target="_blank" class="icon-money"> 网站地图</a><a href="/./list_23.html" target="_blank" class=" icon-cog"> 修改日志</a><a href="http://dn-mingzi.qbox.me/" target="_blank" class="icon-home"> 我的主页7.0</a><a href="http://www.ymblog.net/public/demo/class2" target="_blank" class="icon-check"> 班级主页2.0</a></p><p class="text-center">&copy;版权所有 2014-2015 本站由ThinkPHP强力驱动，All Designed By <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a>.</p></div><script src="/Public/js/jquery.js"></script><script src="/Public/js/pintuer.js"></script><script src="/Public/js/index.js"></script></body></html>

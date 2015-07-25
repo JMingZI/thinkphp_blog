@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+	<meta charset="utf-8">
+</head>
+<body>
+<form action="{:U(GROUP_NAME.'/Category/changeSort')}" method="post">
+	<table>
+		<tr><th colspan="7"><h2>分类列表</h2></th></tr>
+		<tr>
+			<th>ID</th>
+			<th>名称</th>
+			<th>PID</th>
+			<th>排序</th>
+			<th>子目录</th>
+			<th>操作</th>
+		</tr>
+		<foreach name="cate" item="v">
+		<tr>
+			<td>{$v.id}</td>
+			<td width="10%">{$v.name}
+			</td>
+			<td>{$v.pid}</td>
+			<td width="10%"><input class="input3" type="text" name="{$v.id}" value="{$v.sort}"></td>
+			<td width="50%">
+				<if condition="$v['child'] eq null">
+				没有子栏目
+				<else/>
+				<table border="0">
+				<tr>
+					<td>ID</td><td>子栏目名</td><td>PID</td><td>排序</td><td>操作</td>
+				</tr>
+				<for start="0" end="count($v['child'])">
+				<tr>
+					<td>{$v.child.$i.id}</td><td>{$v.child.$i.name}</td><td>{$v.child.$i.pid}</td>
+					<td><input class="input3" type="text" name="{$v.child.$i.id}" value="{$v.child.$i.sort}"></td>
+					<td>[<a href="">编辑</a>] [<a href="{:U(GROUP_NAME. '/Category/delCate', array('id' => $v['child'][$i]['id']))}">删除</a>]</td>
+				</tr>
+				</for>
+				</table>
+				</if>
+			</td>
+			<td>[<a href="{:U(GROUP_NAME.'/Category/addCate', array('pid' => $v['id']))}">添加子分类</a>] [<a href="">编辑</a>] [<a href="{:U(GROUP_NAME. '/Category/delCate', array('id' => $v['id']))}">删除</a>]</td>
+		</tr>
+		</foreach>
+		<tr><td colspan="7">
+				<input class="input3" type="submit" value="修改排序">
+		</td></tr>
+	</table>
+</form>
+</form>
+</body>
+</html>

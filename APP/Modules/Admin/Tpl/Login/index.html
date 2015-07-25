@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>后台登录系统 - 杨明的博客</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="__PUBLIC__/js/jQuery v1.9.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/login.css">
+</head>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<script type="text/javascript">
+imgUrl = '__PUBLIC__/';
+loginHandleUrl = '{:U("Admin/Login/loginHandle", "", "")}';
+function changeVerify(id) {
+	document.getElementById(id).src = "{:U('Admin/Login/verify', '', '')}" + '/' + Math.random();
+} 
+$(function(){
+    $('.left').css('height',$(window).height());
+});
+function changeVerify(id) {
+	document.getElementById(id).src = "{:U(GROUP_NAME.'/Login/verify', '', '')}" + '/' + Math.random();
+}
+</script>
+<body>
+<div class="left">
+  <div class="info">
+    <div class="left-logo"></div>
+    <p>电话：18390239969</p>
+    <p>Email：472102644@qq.com</p>
+  </div>
+</div>
+<div class="login">
+  <div class="logo">
+    <img src="__PUBLIC__/images/login/logo.png" />
+    <h1>Ming依然 & 用心做好自己</h1>
+  </div>
+	  <form id="loginform"  name="loginform" action='{:U("Admin/Login/loginHandle")}' method="post">
+	  	<input type="text"  id="username" name="username" class="text" maxlength="20" value="" placeholder=" 用户名" />
+	  	<input  id="password" name="password" type="password" class="text" value="" maxlength="20" autocomplete="off" placeholder=" 密码" />
+	  	<input type="text" id="verify" name="verify" class="text verify" maxlength="4" autocomplete="off" placeholder=" 验证码"/>
+		<a href="javascript:changeVerify('code');"><img id="code" src="{:U(GROUP_NAME.'/Login/verify', '', '')}" alt="code"></a>
+		<input type="submit" class="text loginButton" value="登录" name="submit"  />
+	  </form>
+	<div class="powered">Copyright &copy; 2015 03 <a href="http://mingshome.qiniudn.com" target="_blank">MingZI</a> All Rights Reserved.</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<?php	return array ( 0 => 'id', 1 => 'bid', 2 => 'tid', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'int(11)', 'bid' => 'int(10)', 'tid' => 'int(10)', ), );?>

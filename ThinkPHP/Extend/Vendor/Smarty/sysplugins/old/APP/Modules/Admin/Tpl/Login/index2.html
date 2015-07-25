@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ming cms - 登录系统</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="keywords" content="Ming cms - 登录系统">
+<meta name="discription" content="Ming cms - 登录系统">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/system.css" />
+<script type="text/javascript">
+	imgUrl = '__PUBLIC__/';
+	loginHandleUrl = '{:U("Admin/Login/loginHandle", "", "")}';
+	function changeVerify(id) {
+		document.getElementById(id).src = "{:U('Admin/Login/verify', '', '')}" + '/' + Math.random();
+	} 
+</script>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+</head>
+<body id="loginpage">
+	<div id="login" class="clearfix">
+		<div class="main clearfix">
+			<div class="logbox">
+				<div class="header">
+					<h2>MingCMS <span>欢迎登录Mcms网站内容管理系统</span></h2>
+				</div>
+				<div class="web_login" id="web_login">
+					<form id="loginform"  name="loginform" action='{:U("Admin/Login/loginHandle")}' method="post">
+						<div class="inputOuter">
+                            <input type="text" class="inputstyle" id="username" name="username" value="" tabindex="1" placeholder="用户名">
+                        </div>
+						<div class="inputOuter">
+                            <input type="password" class="inputstyle password" id="password" name="password" value="" tabindex="2" placeholder="密码">
+                        </div>
+                        <div class="inputOuter">
+                            <input type="text" class="verify" id="verify" name="verify" tabindex="2" placeholder="验证码"/> <span><a href="javascript:changeVerify('code');"><img id="code" src="{:U('Admin/Login/verify', '', '')}" alt=""></a></span>
+                        </div>
+                        <div class="submit">
+	                        <a class="login_button" id="login_button">
+	                            <input type="submit" tabindex="6" value="登 录" class="btn">
+	                        </a>
+                        </div>
+					</form>
+				</div>
+				<div class="footer">
+					<a href="http://mingshome.qiniudn.com" target="_blank" >&copy; 2014-12 Designed By Ming </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

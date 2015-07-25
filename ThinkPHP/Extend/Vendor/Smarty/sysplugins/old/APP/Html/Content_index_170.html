@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>js判断鼠标滚动方向的办法 - Ming依然</title>
+    <meta name="keywords" content="js判断鼠标滚动方向的办法，Ming依然，MingCMS，MingBlog，个人博客" />
+    <meta name="description" content="	今天在学习css3+jquery实现全屏滚动的时候需要判断鼠标的滚动方向，以前没做啥了解，只是百度" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/css/pintuer.css">
+    <link rel="stylesheet" href="/Public/css/index.css">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  </head>
+  <body>
+    <!-- 导航 -->
+    <div class="container-layout mynav">
+      <div class="line">
+        <div class="navbar xb10 xb1-move">
+          <div class="navbar-head">
+            <button class="button icon-navicon" data-target="#navbar1"></button>
+            <a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a>
+          </div>
+          <div class="navbar-right hidden-s hidden-l bg-main login">
+            <a href="/user/login.html" target="_blank" class="icon-share"> 登录</a> <span>|</span>
+            <a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a>
+          </div>
+        </div>
+      </div><!-- line -->
+      <div class="line">
+        <div class="xb6 xb1-move mymenu">
+          <div class="navbar-body nav-navicon" id="navbar1">
+            <ul class="nav nav-inline nav-menu">
+              <li><a href="./"><i class=" icon-qrcode"></i> <strong>首页</strong> <i class=" icon-qrcode"></i></a></li>
+              <li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li>            </ul>
+          </div>
+        </div>
+      </div><!-- line -->
+    </div><!-- 导航 -->
+	<link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" />
+	<script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script>
+	<script type="text/javascript">
+	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script>
+	<div class="layout mycontent">
+		<div class="line bg">
+			<div class="xb7 xb1-move myleft">
+				<h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+								<a href="/list_11.html">随笔</a>
+					&gt;									</h3>
+			  <div class="line">
+				<div class="xb12 xl12">
+					<h2 style="text-align:center;"> <i class=" icon-star"></i> <span style="color:red;">[置顶]</span> js判断鼠标滚动方向的办法</h2>
+					<p class="text-center mycontent-info"><i class="icon-user"></i> ming依然 | <i class="icon-calendar"></i> 2015年04月26日 12点44分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/170.html"></script>) | <i class="icon-file"></i> 所属分类[随笔] | <i class="icon-tag"></i> <span class="tag">js鼠标事件</span>&nbsp;</p> 
+					<p></i><p>
+	<span style="font-size:14px;">今天在学习css3+jquery实现全屏滚动的时候需要判断鼠标的滚动方向，以前没做啥了解，只是百度到可以用的就用，今天来了解下。</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">首先，鼠标的滚动方向判断被区分为2类，一类是IE/chrome/open,一类是火狐，就只是火狐与其它浏览器不同，独成一派。</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">滚动事件：火狐是<span style="font-family:Arial;font-size:14px;line-height:26px;background-color:#FFFFFF;">DOMMouseScroll，其他浏览器都是用mousewheel</span>，还有判断鼠标向上滚动还是向下滚动的一个属性也不同，火狐是<span style="font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;">event.detail，其他浏览器是<span style="font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;">event.wheelDelta，区别就是这2个吧。</span></span></span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><span style="font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;">下面说说实现办法：</span></span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><span style="font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;">在其他浏览器中，只需对document.body添加</span><span style="font-family:Arial;font-size:14px;line-height:26px;background-color:#FFFFFF;">mousewheel事件，监听鼠标的滚动，</span><span style="font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;"><span style="font-family:微软雅黑;font-size:14px;line-height:21px;background-color:#FFFFFF;">event.wheelDelta</span>的值始终等于120/-120，例如：</span></span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"> </span>
+</p>
+<pre class="prettyprint linenums lang-js"> //event.wheelDelta
+  // 正数:向上滚动，负数：向下滚动
+  // 滚动一次值120
+  document.body.onmousewheel = function (event) {
+    event = event || window.event;
+    document.getElementById("wheelDelta").value=event.wheelDelta;&nbsp;
+  };</pre>
+<p>
+	<br />
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">结果图：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><img src="/Data/kindeditor/attached/image/20150426/20150426122647_91416.jpg" alt="" /><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">而在火狐中，需要注册事件<span style="color:#DD1144;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace;font-size:14px;background-color:#F7F7F9;">DOMMouseScroll，<span style="font-family:微软雅黑;font-size:14px;line-height:21px;color:#000000;background-color:#FFFFFF;">event.detail的值始终为3/-3</span></span></span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><span style="color:#DD1144;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace;font-size:14px;background-color:#F7F7F9;"><span style="font-family:微软雅黑;font-size:14px;line-height:21px;color:#000000;background-color:#FFFFFF;"> </span></span></span>
+</p>
+<pre class="prettyprint linenums lang-js">//  正数：向下滚动，负数：向上滚动
+  //  向上滚动一页值为-32768，向下滚动一页值为+32768，其他值代表滚动的行数, 方向代表了数值的正负号
+  //  受信任的事件是不会给detail赋值0
+  document.body.addEventListener("DOMMouseScroll", function (event) {
+       document.getElementById("detail").value=e.detail;
+  });</pre>
+结果图：
+<p>
+	<br />
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"><span style="color:#DD1144;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace;font-size:14px;background-color:#F7F7F9;"><span style="font-family:微软雅黑;font-size:14px;line-height:21px;color:#000000;background-color:#FFFFFF;"><img src="/Data/kindeditor/attached/image/20150426/20150426123410_52146.jpg" alt="" /><br />
+</span></span></span>
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;">完整的写法：</span></span>
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"> </span></span>
+</p>
+<pre class="prettyprint linenums lang-js">var scrollFunc=function(e){ 
+	    e = e || window.event; 
+	    var t1=document.getElementById("wheelDelta"); 
+	    var t2=document.getElementById("detail"); 
+	    if(e.wheelDelta){//IE/Opera/Chrome 
+	        t1.value=e.wheelDelta; 
+	    }else if(e.detail){//Firefox 
+	        t2.value=e.detail; 
+	    } 
+	} 
+	/*注册事件*/ 
+	if(document.body.addEventListener){ 
+	    document.body.addEventListener('DOMMouseScroll',scrollFunc, false); 
+	}//W3C 
+	window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome </pre>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"><br />
+</span></span>
+</p>
+还有一种办法是根据scrollTop()来判断，这种方法就显得比较不合适了，但可以达到这种效果：
+<p>
+	<br />
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"><br />
+</span></span>
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"> </span></span>
+</p>
+<pre class="prettyprint linenums lang-js">//方法二
+	// var prevTop = 0,
+ //    currTop = 0;
+	// $(window).scroll(function() {
+	//     currTop = $(window).scrollTop();
+	//     if (currTop &lt; prevTop) { //判断小于则为向上滚动
+	//         // $("#head").addClass("float");
+	//         alert("向上");
+	//     } else {
+	//         alert("向下");
+	//         // $("#head").removeClass("float");
+	//     }
+	//     //prevTop = currTop; //IE下有BUG，所以用以下方式
+	//     setTimeout(function(){prevTop = currTop},0);
+	// });</pre>
+<br />
+<p>
+	<br />
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;">参考：<a href="http://blog.csdn.net/spy19881201/article/details/38704621" target="_blank">CSDN：	http://blog.csdn.net/spy19881201/article/details/38704621</a></span></span>
+</p>
+<p>
+	<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.daimajiayuan.com/sitejs-17196-1.html" target="_blank">代码家园：　http://www.daimajiayuan.com/sitejs-17196-1.html</a><br />
+</span>
+</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.zhangxinxu.com/wordpress/2013/04/js-mousewheel-dommousescroll-event/" target="_blank">&nbsp;&nbsp;张鑫旭：　http://www.zhangxinxu.com/wordpress/2013/04/js-mousewheel-dommousescroll-event/</a>
+</p>
+<p>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://blog.csdn.net/zishan007/article/details/8480143" target="_blank">ｃｓｄｎ：　http://blog.csdn.net/zishan007/article/details/8480143</a>
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;"><br />
+</span></span>
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;">学习笔记：</span></span>
+</p>
+<p>
+	<span><span style="font-size:14px;line-height:21px;background-color:#FFFFFF;">
+<pre class="prettyprint linenums lang-js">滚轮事件的兼容性差异有些不拘一格，不是以往的IE8-派和其他派，而是FireFox派和其他派。
+
+针对IE和火狐的鼠标滚动事件的获取有2种方法
+mouseWheel DOMMouseScroll
+===========》
+	CSDN：	http://blog.csdn.net/spy19881201/article/details/38704621
+	代码家园：　http://www.daimajiayuan.com/sitejs-17196-1.html
+	张鑫旭：　http://www.zhangxinxu.com/wordpress/2013/04/js-mousewheel-dommousescroll-event/
+	ｃｓｄｎ：　http://blog.csdn.net/zishan007/article/details/8480143
+
+e = event || window.event;	
+===========》
+	百度知道：	http://zhidao.baidu.com/link?url=mBVCNzx1Xr4XQdOson4we83S3qVOuj8YOnAMkF1c9gPDbTSqb-AdTCiXAOSX-jvZPgDs3nsExg-G5c_-S7azoK
+	博客园：    http://www.cnblogs.com/huajs/archive/2011/11/10/2244793.html
+
+还有，IE和火狐鼠标滚轮事件是相反的。
+有必要写个test.html测试文件</pre>
+<br />
+</span></span>
+</p>
+<p>
+	<br />
+</p></p>
+				</div><!-- mycontent-info -->
+			  </div><!-- line -->
+				<div style="padding:20px;" class="ds-thread" data-thread-key="170" data-title="js判断鼠标滚动方向的办法" data-url=""></div>			</div>
+            <div class="xb3 myright">
+                <div class="line">
+                    <div class="xb12 xl12">
+                        <h4 class="icon-globe bg-main"> 图片新闻</h4>
+                        <div class="banner myblock" data-pointer="1" data-style="border-main">
+                          <div class="carousel">
+                            <div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                          </div>
+                        </div>
+                    </div><!-- 图片新闻 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-list bg-main"> 阅读排行</h4>
+                        <ul>
+	<li><a href="/content_152.html"><i class=" icon-caret-right"></i> 1 初学SEO </a><span>(阅读62)</span></li>
+</ul><ul>
+	<li><a href="/content_156.html"><i class=" icon-caret-right"></i> 2 解决css3翘边阴影z-ind </a><span>(阅读61)</span></li>
+</ul><ul>
+	<li><a href="/content_157.html"><i class=" icon-caret-right"></i> 3 关于meta跑到body里的问 </a><span>(阅读44)</span></li>
+</ul><ul>
+	<li><a href="/content_165.html"><i class=" icon-caret-right"></i> 4 由js图片预加载想到的 </a><span>(阅读43)</span></li>
+</ul><ul>
+	<li><a href="/content_147.html"><i class=" icon-caret-right"></i> 5 Thinkphp后台登录验证码 </a><span>(阅读36)</span></li>
+</ul><ul>
+	<li><a href="/content_142.html"><i class=" icon-caret-right"></i> 6 web语义化的理解 </a><span>(阅读36)</span></li>
+</ul><ul>
+	<li><a href="/content_146.html"><i class=" icon-caret-right"></i> 7  FTP连接 530 User </a><span>(阅读34)</span></li>
+</ul><ul>
+	<li><a href="/content_143.html"><i class=" icon-caret-right"></i> 8 安装nodejs expres </a><span>(阅读34)</span></li>
+</ul><ul>
+	<li><a href="/content_163.html"><i class=" icon-caret-right"></i> 9 前端笔试题总结一 </a><span>(阅读33)</span></li>
+</ul><ul>
+	<li><a href="/content_164.html"><i class=" icon-caret-right"></i> 10 word-wrap与word- </a><span>(阅读32)</span></li>
+</ul>                      </div>
+                    </div><!-- read -->
+                    <!-- 我的标签 -->
+                    <div class="x12 mytags">
+                        <div class="line mytaglist">
+                            <a href="/list_142_152_36.html"><span><span style="font-size:12px;">web语义化</span>(2)</span></a><a href="/list_143_37.html"><span><span style="font-size:11px;">nodejs</span>(1)</span></a><a href="/list_144_147_38.html"><span><span style="font-size:12px;">thinkphp</span>(2)</span></a><a href="/list_145_146_39.html"><span><span style="font-size:12px;">ftp</span>(2)</span></a><a href="/list_146_40.html"><span><span style="font-size:11px;"></span>(1)</span></a><a href="/list_147_41.html"><span><span style="font-size:11px;">验证码不显示</span>(1)</span></a><a href="/list_148_149_150_151_42.html"><span><span style="font-size:14px;">jsmvc</span>(4)</span></a><a href="/list_148_149_150_151_43.html"><span><span style="font-size:14px;">实习简历</span>(4)</span></a><a href="/list_148_149_150_151_168_44.html"><span><span style="font-size:15px;">javascript</span>(5)</span></a><a href="/list_152_45.html"><span><span style="font-size:11px;">SEO</span>(1)</span></a><a href="/list_152_46.html"><span><span style="font-size:11px;">代码优化</span>(1)</span></a><a href="/list_153_154_155_156_169_47.html"><span><span style="font-size:15px;">CSS3</span>(5)</span></a><a href="/list_153_154_155_156_48.html"><span><span style="font-size:14px;">翘边阴影</span>(4)</span></a><a href="/list_157_49.html"><span><span style="font-size:11px;">编码格式</span>(1)</span></a><a href="/list_157_50.html"><span><span style="font-size:11px;">utf8无BOM</span>(1)</span></a><a href="/list_157_160_164_51.html"><span><span style="font-size:13px;">前端</span>(3)</span></a><a href="/list_158_159_166_52.html"><span><span style="font-size:13px;">博客改动记录</span>(3)</span></a><a href="/list_160_162_163_53.html"><span><span style="font-size:13px;">前端笔试题笔记</span>(3)</span></a><a href="/list_164_54.html"><span><span style="font-size:11px;">css</span>(1)</span></a><a href="/list_165_55.html"><span><span style="font-size:11px;">js预加载</span>(1)</span></a><a href="/list_165_56.html"><span><span style="font-size:11px;">jscookie</span>(1)</span></a><a href="/list_167_57.html"><span><span style="font-size:11px;">mylife</span>(1)</span></a><a href="/list_167_58.html"><span><span style="font-size:11px;">大学生活</span>(1)</span></a><a href="/list_169_59.html"><span><span style="font-size:11px;">网页设计</span>(1)</span></a><a href="/list_170_60.html"><span><span style="font-size:11px;">js鼠标事件</span>(1)</span></a>                        </div>
+                    </div>
+                    <!-- 文章档案 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-table bg-main dangan"> 文章档案</h4>
+                        <ul>
+<li><a href="/list_170_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i> 2015年04月 </a><span>(12篇)</span></li>
+</ul><ul>
+<li><a href="/list_170_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i> 2015年03月 </a><span>(6篇)</span></li>
+</ul>                      </div>
+                    </div>
+                    <!-- 最新评论 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-comments bg-main"> 最新评论</h4>
+                        <!-- 多说最新评论 start -->
+                        <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+                        <!-- 多说最新评论 end -->
+                      </div>
+                    </div>
+                    <!-- 最新评论 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-user bg-main"> 访客统计</h4>
+                        <p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+	</div>
+    <script type="text/javascript">
+    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 页脚 -->
+    <div class="layout myfoot bg">
+        <p class="text-center"><a href="./sitemap.html" target="_blank">网站地图</a> <a href="/./list_23.html" target="_blank">修改日志</a> <a href="http://dn-mingzi.qbox.me/" target="_blank">我的主页</a></p>
+        <p class="text-center">&copy;版权所有 2014-2015 <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a></p>
+    </div>
+    <script src="/Public/js/jquery.js"></script>
+    <script src="/Public/js/pintuer.js"></script>
+    <script src="/Public/js/index.js"></script>
+  </body>
+</html>

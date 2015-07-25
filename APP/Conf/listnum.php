@@ -1,0 +1,1 @@
+<?php	return array ( 'PAGE_NUMS' => '10', 'TOP_NUMS' => '6', 'INDEX_LIST_NUMS' => '2', 'CATE_LIST_NUMS' => '6', 'S_TIME' => '86400', 'READ_NUMS' => '15', );?>

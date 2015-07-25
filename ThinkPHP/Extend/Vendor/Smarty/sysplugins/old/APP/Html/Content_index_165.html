@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>由js图片预加载想到的 - Ming依然</title>
+    <meta name="keywords" content="由js图片预加载想到的，Ming依然，MingCMS，MingBlog，个人博客" />
+    <meta name="description" content="	今天看了有关页面优化的内容，有提到图片预加载可以减轻服务器负担，提高用户体验，之前没有了解过，今天" />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Public/css/pintuer.css">
+    <link rel="stylesheet" href="/Public/css/index.css">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+  </head>
+  <body>
+    <!-- 导航 -->
+    <div class="container-layout mynav">
+      <div class="line">
+        <div class="navbar xb10 xb1-move">
+          <div class="navbar-head">
+            <button class="button icon-navicon" data-target="#navbar1"></button>
+            <a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a>
+          </div>
+          <div class="navbar-right hidden-s hidden-l bg-main login">
+            <a href="/user/login.html" target="_blank" class="icon-share"> 登录</a> <span>|</span>
+            <a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a>
+          </div>
+        </div>
+      </div><!-- line -->
+      <div class="line">
+        <div class="xb6 xb1-move mymenu">
+          <div class="navbar-body nav-navicon" id="navbar1">
+            <ul class="nav nav-inline nav-menu">
+              <li><a href="./"><strong>首页</strong></a></li>
+              <li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_13.html"><strong>互联网</strong></a></li>            </ul>
+          </div>
+        </div>
+      </div><!-- line -->
+    </div><!-- 导航 -->
+	<link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" />
+	<script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script>
+	<script type="text/javascript">
+	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script>
+	<div class="layout mycontent">
+		<div class="line bg">
+			<div class="xb7 xb1-move myleft">
+				<h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+								<a href="/list_12.html">web前端</a>
+					&gt;									</h3>
+			  <div class="line">
+				<div class="xb12 xl12">
+					<h2 style="text-align:center;"> <i class=" icon-star"></i> <span style="color:red;">[置顶]</span> 由js图片预加载想到的</h2>
+					<p class="text-center mycontent-info"><i class="icon-user"></i> ming依然 | <i class="icon-calendar"></i> 2015年04月18日 23点36分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/165.html"></script>) | <i class="icon-file"></i> 所属分类[web前端] | <i class="icon-tag"></i> <span class="tag">js预加载</span>&nbsp;<span class="tag">jscookie</span>&nbsp;</p> 
+					<p></i><p>
+	<span style="font-size:16px;">今天看了有关页面优化的内容，有提到图片预加载可以减轻服务器负担，提高用户体验，之前没有了解过，今天学习了下；</span>
+</p>
+<p>
+	<span style="color:#FFFFFF;font-size:16px;background-color:#337FE5;">首先由js预加载，我想到了jquery图片预加载，然后图片可视范围内加载，不可见延迟加载，然后又想到了那种图片加载效果，由模糊到清晰，然后再到jscookie，内容其实感觉没多少，似乎都是自己漏掉的（糗~）。</span>
+</p>
+<p>
+	<span style="color:#FFFFFF;font-size:16px;"><span style="color:#000000;">先说说js预加载吧，直接上代码：</span></span>
+</p>
+<p>
+	<span style="color:#FFFFFF;font-size:16px;"><span style="color:#000000;">很简单的代码~~
+<pre class="prettyprint linenums lang-js">function loadimg(){
+	var img = new Image();
+	img.src = "http://www.ymblog.net/public/demo/manage_coloege/images/4.jpg";
+	img.onload = function(){
+		document.getElementById('img').src = this.src ;
+		alert(this.width);
+
+		img.width = 500;//这里可以再设置远程或本地的需要预加载图片的宽高。
+
+		alert(this.width);
+	}
+}
+
+window.onload = loadimg;</pre>
+虽然想知道jquery肯定也是可以实现的，但没必要用jquery，因为增加了一个引入文件不说，在jquery里的方法引用没有直接调用原声js代码来得快。还是贴出代码：</span></span>
+</p>
+<p>
+	<span style="color:#FFFFFF;font-size:16px;"><span style="color:#000000;">
+<pre class="prettyprint linenums lang-js">$.preloadImages = function(){
+
+	for( var i= 0; i&lt; arguments.length; i++){
+		img = new Image();
+		img.src = arguments[i];
+		document.getElementById('aimg').src = img.src;
+	}
+
+}
+$.preloadImages(
+	'http://a.hiphotos.baidu.com/image/pic/item/3b292df5e0fe99251cbda98430a85edf8cb171b5.jpg',
+	'http://c.hiphotos.baidu.com/image/pic/item/a2cc7cd98d1001e9bb8cd4dbbc0e7bec55e797b6.jpg'
+	);</pre>
+其实原理都是一样的，都是用到了js的Image类。</span></span>
+</p>
+<p>
+	<span style="font-size:16px;line-height:24px;">那些，图片先模糊再清晰的效果其实这样的，先显示的是像素比较小的，易加载的缩略图，待图片预加载完成后再替换这张缩略图即可，是不是很神奇？</span>
+</p>
+<p>
+	<span style="font-size:16px;line-height:24px;">接下来说什么？哦，延迟加载~</span>
+</p>
+<p>
+	<span style="font-size:16px;line-height:24px;">网上搜了下，还是有很多库可以用的，由于今天太晚了，就没有深入去研究，学习了下<span style="color:#E53333;">lazyload.js</span>第三方插件，还是不错的，可以实现上述功能；</span>
+</p>
+<p>
+	<span style="font-size:16px;line-height:24px;">然后就是jscookie，我用的chrome浏览器，我写了个例子，刷新浏览器居然没反应，cookie值没有写，后来了解到是浏览器禁用本地文件写入cookie，应该说，现在很多浏览器都是这样吧，打开本地服务器环境运行后果然没问题了；</span>
+</p>
+<p>
+	<span style="font-size:16px;line-height:24px;">具体可参考<a href="http://www.w3school.com.cn/js/js_cookies.asp" target="_blank">w3school jscookie </a>还有 这篇 脚本直接里的<a href="http://www.jb51.net/article/14566.htm" target="_blank">js cookie详解</a>&nbsp;我觉得别人都说的很详细了，学习下基础足够了。</span>
+</p>
+<p>
+	<span style="color:#FFFFFF;font-size:16px;"><span style="color:#000000;"><br />
+</span></span>
+</p></p>
+				</div><!-- mycontent-info -->
+			  </div><!-- line -->
+				<div style="padding:20px;" class="ds-thread" data-thread-key="165" data-title="由js图片预加载想到的" data-url=""></div>			</div>
+            <div class="xb3 myright">
+                <div class="line">
+                    <div class="xb12 xl12">
+                        <h4 class="icon-globe bg-main"> 图片新闻</h4>
+                        <div class="banner myblock" data-pointer="1" data-style="border-main">
+                          <div class="carousel">
+                            <div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                            <div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt="">
+                            <p></p>
+                            </div>
+                          </div>
+                        </div>
+                    </div><!-- 图片新闻 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-list bg-main"> 阅读排行</h4>
+                        <ul>
+	<li><a href="/content_152.html"><i class=" icon-caret-right"></i> 1 初学SEO </a><span>(阅读60)</span></li>
+</ul><ul>
+	<li><a href="/content_156.html"><i class=" icon-caret-right"></i> 2 解决css3翘边阴影z-ind </a><span>(阅读56)</span></li>
+</ul><ul>
+	<li><a href="/content_157.html"><i class=" icon-caret-right"></i> 3 关于meta跑到body里的问 </a><span>(阅读42)</span></li>
+</ul><ul>
+	<li><a href="/content_147.html"><i class=" icon-caret-right"></i> 4 Thinkphp后台登录验证码 </a><span>(阅读36)</span></li>
+</ul><ul>
+	<li><a href="/content_142.html"><i class=" icon-caret-right"></i> 5 web语义化的理解 </a><span>(阅读35)</span></li>
+</ul><ul>
+	<li><a href="/content_146.html"><i class=" icon-caret-right"></i> 6  FTP连接 530 User </a><span>(阅读33)</span></li>
+</ul><ul>
+	<li><a href="/content_143.html"><i class=" icon-caret-right"></i> 7 安装nodejs expres </a><span>(阅读32)</span></li>
+</ul><ul>
+	<li><a href="/content_151.html"><i class=" icon-caret-right"></i> 8 由“表现与数据分离”引发的 </a><span>(阅读32)</span></li>
+</ul><ul>
+	<li><a href="/content_163.html"><i class=" icon-caret-right"></i> 9 前端笔试题总结一 </a><span>(阅读31)</span></li>
+</ul><ul>
+	<li><a href="/content_158.html"><i class=" icon-caret-right"></i> 10 2015-4-9博客一次改动 </a><span>(阅读30)</span></li>
+</ul>                      </div>
+                    </div><!-- read -->
+                    <!-- 我的标签 -->
+                    <div class="x12 mytags">
+                        <div class="line mytaglist">
+                            <a href="/list_142_152_36.html"><span><span style="font-size:12px;">web语义化</span>(2)</span></a><a href="/list_143_37.html"><span><span style="font-size:11px;">nodejs</span>(1)</span></a><a href="/list_144_147_38.html"><span><span style="font-size:12px;">thinkphp</span>(2)</span></a><a href="/list_145_146_39.html"><span><span style="font-size:12px;">ftp</span>(2)</span></a><a href="/list_146_40.html"><span><span style="font-size:11px;"></span>(1)</span></a><a href="/list_147_41.html"><span><span style="font-size:11px;">验证码不显示</span>(1)</span></a><a href="/list_148_149_150_151_42.html"><span><span style="font-size:14px;">jsmvc</span>(4)</span></a><a href="/list_148_149_150_151_43.html"><span><span style="font-size:14px;">实习简历</span>(4)</span></a><a href="/list_148_149_150_151_44.html"><span><span style="font-size:14px;">javascript</span>(4)</span></a><a href="/list_152_45.html"><span><span style="font-size:11px;">SEO</span>(1)</span></a><a href="/list_152_46.html"><span><span style="font-size:11px;">代码优化</span>(1)</span></a><a href="/list_153_154_155_156_47.html"><span><span style="font-size:14px;">CSS3</span>(4)</span></a><a href="/list_153_154_155_156_48.html"><span><span style="font-size:14px;">翘边阴影</span>(4)</span></a><a href="/list_157_49.html"><span><span style="font-size:11px;">编码格式</span>(1)</span></a><a href="/list_157_50.html"><span><span style="font-size:11px;">utf8无BOM</span>(1)</span></a><a href="/list_157_160_164_51.html"><span><span style="font-size:13px;">前端</span>(3)</span></a><a href="/list_158_159_52.html"><span><span style="font-size:12px;">博客改动记录</span>(2)</span></a><a href="/list_160_162_163_53.html"><span><span style="font-size:13px;">前端笔试题笔记</span>(3)</span></a><a href="/list_164_54.html"><span><span style="font-size:11px;">css</span>(1)</span></a><a href="/list_165_55.html"><span><span style="font-size:11px;">js预加载</span>(1)</span></a><a href="/list_165_56.html"><span><span style="font-size:11px;">jscookie</span>(1)</span></a>                        </div>
+                    </div>
+                    <!-- 文章档案 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-table bg-main dangan"> 文章档案</h4>
+                        <ul>
+<li><a href="/list_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i> 2015年04月 </a><span>(7篇)</span></li>
+</ul><ul>
+<li><a href="/list_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i> 2015年03月 </a><span>(6篇)</span></li>
+</ul>                      </div>
+                    </div>
+                    <!-- 最新评论 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-comments bg-main"> 最新评论</h4>
+                        <!-- 多说最新评论 start -->
+                        <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+                        <!-- 多说最新评论 end -->
+                      </div>
+                    </div>
+                    <!-- 最新评论 -->
+                    <div class="x12">
+                      <div class="line myblock">
+                        <h4 class="icon-user bg-main"> 访客统计</h4>
+                        <p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+	</div>
+    <script type="text/javascript">
+    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 页脚 -->
+    <div class="layout myfoot bg">
+        <p class="text-center"><a href="/./list_23.html" target="_blank">修改日志</a> <a href="http://myfirsthome.sinaapp.com" target="_blank">我的主页</a></p>
+        <p class="text-center">&copy;版权所有 2014-2015 <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a></p>
+    </div>
+    <script src="/Public/js/jquery.js"></script>
+    <script src="/Public/js/pintuer.js"></script>
+    <script src="/Public/js/index.js"></script>
+  </body>
+</html>

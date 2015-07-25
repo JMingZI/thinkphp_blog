@@ -1,0 +1,9 @@
+<foreach name='dangan' item='v' key='k'>
+<foreach name='v' item='d'>
+<php>$id.=$d.'_';</php>
+</foreach>
+<php>$id.=$k;</php>
+<ul>
+<li><a href="{:U('/list_'.$id)}"><i class="icon-th"></i> {$k|substr=###,0,4}年{$k|substr=###,4,2}月 </a><span>({$v|count=###}篇)</span></li>
+</ul>
+</foreach>

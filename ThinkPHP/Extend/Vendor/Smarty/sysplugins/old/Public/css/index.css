@@ -1,0 +1,96 @@
+body{ border-top: 3px #26C281 solid; }
+.navbar{ height:50px; }
+.navbar	.login{ padding:5px;margin-top: 30px;background:  }
+.navbar	.login a{ color:white;margin:0px 10px;  }
+.navbar	.login span{ color:white; }
+/*.border-bottom{ border-top:1px #eef solid; }*/
+.mymenu ul li{ height:50px; }
+.mymenu ul li a{ height:40px;font-size:16px; line-height: 30px;
+	width:120px;text-align: center;margin-top: 10px;border-top: 2px transparent solid;
+}
+.mymenu ul li a:hover{ border-top:2px #26C281 solid;background: #eee; }
+.mynav{ border-bottom: 1px #dee solid;margin-bottom: 0px; }
+
+/*滚动*/
+.mybanner{ width:100%;height: auto;background: #ede;overflow: hidden; }
+/*.mybanner img{ height:400px;width:100%; }*/
+
+.myzhiding{ padding-bottom: 50px; }
+/*.mycontent-1 {  }*/
+.myleft{ background: #fff;margin-top: 10px;padding:10px;border:1px #dee solid;overflow: hidden; }
+.myleft p{ text-indent: 2em; }
+.mytitle{ height:60px;padding:5px 10px;margin-bottom: 10px; 
+	border-left: 3px red solid;margin-top: 10px;
+}
+.mytitle p{ color:#777;font-size: 12px; }
+.title-a{ position: relative; }
+.title-a:hover{ left:20px; }
+.mysummary{
+	padding:5px 10px;padding-right: 0px;font-size: 14px;border-right: 0px #aaa dashed;
+}
+.mysummary .zhaiyao{ padding:5px 10px; }
+.mysummary .zhaiyao p{ text-indent:1em;color:#777;font-size: 14px; }
+.mysummary .zhaiyao small{ color:#777; }
+.mysummary .img{ width:100%;height:auto;overflow: hidden; }
+.mysummary .img img{ position: relative; }
+.myartical-foot{ padding:0px 10px; }
+.myartical-foot p{ color:#777; }
+.myartical-foot a{ color:#0a8; }
+.myartical-foot a:hover{ text-decoration: underline; }
+
+.myright{ padding: 10px;color:#777; }
+.myright ul{ list-style: none;padding: 0px; }
+.myright ul li{ line-height: 30px; }
+.myright ul li a{ margin-left: 10px; }
+.myright ul li span{ float: right;margin-right: 10px; }
+.myright h4{ height:30px;line-height: 30px;text-indent: 0.5em;color:#fff;margin-bottom:10px;  }
+.myright .banner a{ font-weight: bold;font-size: 16px;text-decoration: underline;margin-left: 10px;color:#666; }
+.myright .myblock{ background: #fff;border:1px #dee solid;padding-bottom: 10px;margin-bottom: 10px; }
+
+.new{ border-top:1px #dee solid;border-bottom:1px #dee solid;padding-bottom: 100px; }
+.new h1{ margin:20px;margin-top: 100px; }
+.new p{ color:#aaa;text-indent: 1em; }
+
+.new-artical{ height:250px;border:1px #fff solid;margin:10px 0px;overflow: hidden;padding:10px; }
+.new-artical:hover{ border-color:#26C281; }
+.new-artical .img{ width:100%;height:130px;overflow: hidden; }
+.new-artical .content{ padding-top:10px; }
+.new-artical p{ color:#555;font-size: 12px;margin: 0px;padding:0px 10px; }
+.new-artical a{ color:#26C281;margin-left: 10px;margin-top: 10px;font-size: 14px;}
+.new-artical a:hover{ color:red;text-decoration:underline; }
+.new-artical img{ position: relative; }
+/*.mytags h1{ margin:20px;margin-top: 100px;height:40px;line-height: 40px;color:#333; }*/
+.mytags{ background:#fff;margin-bottom:10px;padding:10px 0px;border:1px #dee solid; }
+.mytags .mytaglist a{ margin-left:5px;margin-top:5px;padding :2px 5px;white-space:nowrap;color:white;float: left;}
+
+.page{ text-align: center;margin:30px auto;background:;height:40px;line-height: 40px;color:#26C281; }
+.page a,.page span{ padding:5px 20px;border:1px #26C281 solid;margin-left: 20px;color:#26C281; }
+.page a:hover{ background:#26C281;color:#fff; }
+.page span{ background:#26C281;color:#fff;  }
+
+.mycontent{ margin-top: 0px; }
+.mycontent h3{ font-size: 12px;margin-bottom: 20px; }
+.mycontent h3 a{ color:blue; }
+.mycontent .mycontent-info{ font-size: 12px;color:#777;margin:10px;padding:10px 10px 20px 10px;border-bottom: 1px #ccc dashed;text-indent: 0em; }
+.myfoot{ padding-top: 50px;background: #333;color:#eee;border-top: 3px #26C281 solid; }
+.myfoot a{ color:#ccc;margin-right: 10px; }
+
+/*tags-style*/
+.tag1{ background:#F62459; }
+.tag2{ background:#22A7F0; }
+.tag3{ background:#BE90D4; }
+.tag4{ background:#7A942E; }
+.tag5{ background:#2ABB9B; }
+.tag6{ background:#F3C13A; }
+.tag7{ background:#F9690E; }
+.tag8{ background:#6C7A89; }
+.tag9{ background:#044F67; }
+.tag10{ background:#89729E; }
+.color-gray{ color:#aaa; }
+
+
+/*列表样式*/
+/*.mylist{ margin-top: 3px; }*/
+.mylist h3{ font-size: 12px;color:#666; }
+.mylist h3 a{ color:red; }
+/*.mylist .border-list{ border-bottom: 1px #aaa dashed;margin-bottom: 10px; }*/

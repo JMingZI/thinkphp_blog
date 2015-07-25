@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>{$data.0.title} - Ming依然</title>
+    <meta name="keywords" content="{$data.0.title}，Ming依然，MingCMS，MingBlog，个人博客" />
+    <meta name="description" content="{$data.0.content|change_substr=###,50}" />
+<include file='Common:header' />
+	<link rel="stylesheet" href="__ROOT__/Data/kindeditor/plugins/code/prettify.css" />
+	<script type="text/javascript" charset="utf-8" src="__ROOT__/Data/kindeditor/kindeditor.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__ROOT__/Data/kindeditor/plugins/code/prettify.js"></script>
+	<script type="text/javascript">
+	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script>
+	<div class="layout mycontent">
+		<div class="line bg">
+			<div class="xb7 xb1-move myleft">
+				<h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="{:U(GROUP_NAME.'/Index/index', '', '')}">首页</a>&gt;
+				<php>$num=0;</php>
+				<foreach name='parent' item='p'>
+					<a href="{:U('/list_'.$p['id'])}">{$p.name}</a>
+					<if condition='$num eq 0'>
+					&gt;
+					</if>
+					<php>$num++;</php>
+				</foreach>
+				</h3>
+			  <div class="line">
+				<foreach name='data' item='v'>
+				<div class="xb12 xl12">
+					<h2 style="text-align:center;"> <i class=" icon-star"></i> <foreach name='v.attr' item='a'>  <span style="color:{$a.color};">[{$a.name}]</span></foreach> {$v.title}</h2>
+					<p class="text-center mycontent-info"><i class="icon-user"></i> {$v.name} | <i class="icon-calendar"></i> {$v.time|date='Y年m月d日 H点i分', ###} | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="{:U(GROUP_NAME.'/Content/addClickNum', array('id'=>$v['id']))}"></script>) | <i class="icon-file"></i> 所属分类[{$v.sort}] | <i class="icon-tag"></i> <foreach name='v.tags' item='t'><span class="tag">{$t.name}</span>&nbsp;  </foreach></p> 
+					<p></i>{$v.content|change_html_tags=###}</p>
+				</div><!-- mycontent-info -->
+			  </div><!-- line -->
+				<div style="padding:20px;" class="ds-thread" data-thread-key="{$v.id}" data-title="{$v.title}" data-url=""></div>
+				</foreach>
+			</div>
+<include file='Common:right' />
+	</div>
+<include file='Common:footer' />

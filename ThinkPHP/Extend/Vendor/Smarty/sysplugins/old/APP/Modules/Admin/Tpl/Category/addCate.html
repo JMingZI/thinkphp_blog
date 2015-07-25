@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+	<meta charset="utf-8">
+</head>
+<body>
+<form method="post" action="{:U(GROUP_NAME . '/Category/cateHandle')}">
+	<table>
+		<tr><th colspan="2"><h2>添加分类</h2></th></tr>
+		<tr>
+			<td class="td-right">分类栏目名称</td>
+			<td class="td-left"><input class="input" type="text" name="name" value=""></td>
+		</tr>
+		<tr>
+			<td class="td-right">排序</td>
+			<td class="td-left"><input class="input" type="text" name="sort" value="100"></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<input type="hidden" name="pid" value="{$pid}">
+				<input type="submit" class="input3" value="提交">
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

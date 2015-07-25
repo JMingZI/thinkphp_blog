@@ -1,0 +1,8 @@
+<foreach name='tags' item='tag'>
+{$id=''}<php>$num = $tag['num'];</php>
+<foreach name='tag.bid' item='b'>
+<php>$id.=$b['bid'].'_';</php>
+</foreach>
+<php>$id.=$tag['id'];</php>
+<a href="{:U('/list_'.$id)}"><span>{$tag.name|tagFont=$num,###}({$num})</span></a>
+</foreach>

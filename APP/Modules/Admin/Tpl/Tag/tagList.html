@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/common.css">
+	<meta charset="utf-8">
+</head>
+<body>
+	<table>
+		<tr><th colspan="4"><h2>标签列表</h2></th></tr>
+		<tr>
+			<td>ID</td>
+			<td>标签名</td>
+			<td>操作</td>
+		</tr>
+		<foreach name="data" item="v">
+		<tr>
+			<td>{$v.id}</td>
+			<td>{$v.name}</td>
+			<td>[<a href="">编辑</a>][<a href="">删除</a>]</td>
+		</tr>
+		</foreach>
+		<tr><td colspan="4">{$page}</td></tr>
+	</table>
+</body>
+</html>

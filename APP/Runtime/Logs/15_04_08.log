@@ -1,0 +1,484 @@
+[ 2015-04-08T18:44:28+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.026956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.027301s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.040343s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.055181s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='145' [ RunTime:0.027344s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.090870s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000447s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.030002s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='145' [ RunTime:0.020394s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000612s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000444s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000432s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008512s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 5   [ RunTime:0.000600s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.015910s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.000483s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000503s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.028911s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000380s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000317s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000282s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.011170s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000416s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000343s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000454s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.860675s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.860879s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.022089s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.011034s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.052859s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.033675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.120186s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.017435s ]
+INFO: [ view_end ] --END-- [ RunTime:0.017657s ]
+
+[ 2015-04-08T18:44:29+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002596s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.007883s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.001651s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.012647s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000513s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.009627s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000380s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000299s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000269s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.008124s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000547s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.198547s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.198734s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001665s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001603s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001383s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001575s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006738s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001708s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001877s ]
+
+[ 2015-04-08T18:44:33+08:00 ] 0.0.0.0 /tp_blog/Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.091558s ]
+INFO: [ route_check ] --END-- [ RunTime:0.091844s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002142s ]
+
+[ 2015-04-08T18:44:34+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001661s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001853s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.017197s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.000681s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.017554s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='145' [ RunTime:0.000589s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.011237s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000450s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.011070s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='145' [ RunTime:0.000654s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000482s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000872s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000542s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.008023s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 5   [ RunTime:0.000527s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.008559s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.000495s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000744s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.012561s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000380s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000517s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000414s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.009917s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000482s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000572s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000475s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.214096s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.214282s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001295s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001272s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001152s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001720s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005941s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001559s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001734s ]
+
+[ 2015-04-08T18:44:42+08:00 ] 0.0.0.0 /tp_blog/Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002733s ]
+INFO: [ route_check ] --END-- [ RunTime:0.003002s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002322s ]
+
+[ 2015-04-08T22:00:54+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001898s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.022228s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.014537s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='145' [ RunTime:0.000691s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.025711s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000465s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.014085s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='145' [ RunTime:0.000775s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000555s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000542s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000575s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.011706s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 5   [ RunTime:0.000526s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.010716s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.000491s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000468s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.021229s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000356s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000526s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000408s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.007600s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000395s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000270s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000455s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.171718s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.171910s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001212s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001164s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000907s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005044s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002196s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002391s ]
+
+[ 2015-04-08T22:00:57+08:00 ] 0.0.0.0 /tp_blog/Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002038s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002263s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001900s ]
+
+[ 2015-04-08T22:38:41+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002057s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.031454s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.000553s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.012845s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='145' [ RunTime:0.000638s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.014145s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000445s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.020277s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='145' [ RunTime:0.000583s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000440s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000356s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.013019s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 5   [ RunTime:0.000540s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.007645s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.000618s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000480s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.010869s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000357s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000299s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000264s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.008784s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000467s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000625s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.226571s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.226877s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001735s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001124s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000840s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005499s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001977s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002151s ]
+
+[ 2015-04-08T22:38:43+08:00 ] 0.0.0.0 /tp_blog/Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.005132s ]
+INFO: [ route_check ] --END-- [ RunTime:0.005340s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002055s ]
+
+[ 2015-04-08T22:39:14+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.003710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003921s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.019790s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.001084s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.016652s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='145' [ RunTime:0.000667s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.015063s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000531s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.013388s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='145' [ RunTime:0.000563s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000416s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000330s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000339s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.010660s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 5   [ RunTime:0.000629s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.009510s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.000444s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000482s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.011641s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000401s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000512s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000649s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.008597s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000382s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000272s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000462s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.169232s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.169435s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001318s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001089s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001053s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001329s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005270s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001510s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001682s ]
+
+[ 2015-04-08T22:39:16+08:00 ] 0.0.0.0 /tp_blog/Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002007s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002222s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001712s ]
+
+[ 2015-04-08T22:40:15+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001605s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001815s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.017098s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.011618s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='145' [ RunTime:0.000479s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.013527s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000526s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.011055s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='145' [ RunTime:0.000580s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000407s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000296s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000639s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009382s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 5   [ RunTime:0.000499s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.008416s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.000438s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000442s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.011080s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000358s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000298s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000251s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.008294s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000477s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.001002s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000532s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.151185s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.151373s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001226s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000963s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000928s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001271s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004854s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001544s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001709s ]
+
+[ 2015-04-08T22:40:16+08:00 ] 0.0.0.0 /tp_blog/Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002462s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002678s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002072s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002287s ]
+
+[ 2015-04-08T22:40:18+08:00 ] 0.0.0.0 /tp_blog/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002092s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.015574s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.013681s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='145' [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.011778s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.012393s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='145' [ RunTime:0.000586s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000564s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000365s ]
+NOTIC: [8] Undefined index: mapping_order C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit C:\wamp\www\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000415s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.009593s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 5   [ RunTime:0.000512s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in C:\wamp\www\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag C:\wamp\www\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.009496s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 5   [ RunTime:0.000472s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.015012s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000402s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000372s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000342s ]
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 C:\wamp\www\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.009657s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000510s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000423s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000508s ]
+NOTIC: [8] Undefined variable: id C:\wamp\www\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.172883s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.173070s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001288s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001229s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001046s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001403s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.005472s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001611s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001782s ]
+
+[ 2015-04-08T22:40:19+08:00 ] 0.0.0.0 /tp_blog/Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.004988s ]
+INFO: [ route_check ] --END-- [ RunTime:0.005237s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002638s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002852s ]
+

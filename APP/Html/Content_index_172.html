@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>由新手引导特效想到的 - Ming依然</title><meta name="keywords" content="由新手引导特效想到的，Ming依然，MingCMS，MingBlog，个人博客" /><meta name="description" content="	今天看了下新手引导的特效制作，没接触之前觉得很神奇，了解之后发现也不过如此。	这个引导特效的流程是" /><meta name="renderer" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta property="qc:admins" content="436125133761524776654" /><link rel="stylesheet" href="/Public/css/pintuer.css"><link rel="stylesheet" href="/Public/css/index.css"><script>    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?75c4d1212e0e86f5b991bce6a20a8e82";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script></head><body><!-- 导航 --><div class="container-layout mynav"><div class="line"><div class="navbar xb10 xb1-move"><div class="navbar-head"><button class="button icon-navicon" data-target="#navbar1"></button><a href="#" class="xb12 xl8"><img src="/Public/images/logo.jpg" class="img-responsive shake-hover" alt="logo" /></a></div><div class="navbar-right hidden-s hidden-l bg-main login"><a href="javascript:;"><span id="login"></span></a><a href="javascript:;" onclick="AddFavorite(window.location,document.title)" target="_blank" class="icon-heart"> 收藏</a><script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101209215" charset="utf-8"></script><script type="text/javascript">QC.Login({ btnId:"login" });</script></div></div></div><!-- line --><div class="line"><div class="xb6 xb1-move mymenu"><div class="navbar-body nav-navicon" id="navbar1"><ul class="nav nav-inline nav-menu"><li><a href="./"><i class=" icon-qrcode"></i><strong>首页</strong><i class=" icon-qrcode"></i></a></li><li><a href="/list_11.html"><strong>随笔</strong></a></li><li><a href="/list_12.html"><strong>web前端</strong></a></li><li><a href="/list_15.html"><strong>PHP</strong></a></li><li><a href="/list_24.html"><strong>MyLife</strong></a></li></ul></div></div></div><!-- line --></div><!-- 导航 --><link rel="stylesheet" href="/Data/kindeditor/plugins/code/prettify.css" /><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/kindeditor.js"></script><script type="text/javascript" charset="utf-8" src="/Data/kindeditor/plugins/code/prettify.js"></script><script type="text/javascript">	KindEditor.ready(function(K) {
+		prettyPrint(); 
+	});
+	</script><div class="layout mycontent"><div class="line bg"><div class="xb7 xb1-move myleft"><h3><i class=" icon-paper-clip"></i> 位置&gt;<a href="/Index/Index/index">首页</a>&gt;
+				<a href="/list_11.html">随笔</a>&gt;</h3><div class="line"><div class="xb12 xl12"><h2 style="text-align:center;"><i class=" icon-star"></i><span style="color:red;">[置顶]</span>由新手引导特效想到的</h2><p class="text-center mycontent-info"><i class="icon-user"></i>Ming依然 | <i class="icon-calendar"></i>2015年04月28日 21点22分 | <i class="icon-eye"></i> 阅读(<script type="text/javascript" src="/Index/Content/addClickNum/id/172.html"></script>) | <i class="icon-file"></i> 所属分类[随笔] | <i class="icon-tag"></i><span class="tag">引导特效</span>&nbsp;<span class="tag">jscookie</span>&nbsp;</p><p></i><p>
+	<span style="font-size:14px;">今天看了下新手引导的特效制作，没接触之前觉得很神奇，了解之后发现也不过如此。</span>
+</p>
+<p>
+	<span style="line-height:21px;font-size:14px;">这个引导特效的流程是这样的，当你第一次进入一个网站，它会显示这样的一个引导界面，其实每一个下一步都是一张图片，而这些图片是按照一定点击顺序显示或隐藏的，它们所处的位置，是在一个大的绝对定位的父级div层上，并且这个div层的z-index属性值高于页面中的每个元素，还有一种半透明的模糊效果，这样以来，当显示引导层的时候，用户是点击不到后面的body元素的。</span>
+</p>
+<p>
+	<span style="line-height:21px;font-size:14px;">还有一个知识点就是你第一次进入这个网站会写入cookie，一段时间内有效，而接下来我要说的就是js，cookie的具体内容。</span>
+</p>
+<p>
+	<span style="line-height:21px;color:#E53333;font-size:14px;">tips：写入cookie是服务器行为，当你的网页没有运行在服务器环境中时，写入cookie是无效的</span>
+</p>
+<p>
+	<span style="line-height:21px;font-size:14px;">js对cookie的写入很简单，譬如：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"></span>
+</p>
+<pre class="prettyprint linenums lang-js">document.cookie="userId=828"; </pre>
+<span style="font-size:14px;line-height:21px;"> 
+<pre class="prettyprint linenums lang-js"></pre>
+<span style="font-family:Tahoma, Helvetica, Arial, 宋体, sans-serif;line-height:25.2000007629395px;">每个cookie都是一个名/值对，可以把下面这样一个字符串赋值给document.cookie：</span><span style="font-family:Tahoma, Helvetica, Arial, 宋体, sans-serif;line-height:25.2000007629395px;">如果要一次存储多个名/值对，可以使用分号加空格（; ）隔开，例如：</span></span>
+<p>
+	<span style="font-size:14px;line-height:21px;"></span>
+</p>
+<pre class="prettyprint linenums lang-js">document.cookie="userId=828; userName=hulk"; </pre>
+<p>
+	<span style="font-size:14px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;">另外，对于写入cookie的内容要用</span><span style="font-family:Tahoma, Helvetica, Arial, 宋体, sans-serif;line-height:25.2000007629395px;font-size:14px;background-color:#F7FCFF;">escape()函数</span><span style="font-size:14px;">进行编码，因为</span><span style="line-height:21px;"><span style="font-family:Tahoma, Helvetica, Arial, 宋体, sans-serif;line-height:25.2000007629395px;font-size:14px;">在cookie 的名或值中不能使用分号（;）、逗号（,）、等号（=）以及空格</span><span style="font-size:14px;">。</span></span>
+</p>
+<span></span>
+<p>
+	<span style="font-size:14px;line-height:21px;"></span>
+</p>
+<pre class="prettyprint linenums lang-js">document.cookie="str="+escape("I love ajax"); </pre>
+<p>
+	<span style="font-size:14px;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;">当然在你取值的时候，就需要解码，</span><span style="font-family:Tahoma, Helvetica, Arial, 宋体, sans-serif;font-size:14px;line-height:25.2000007629395px;background-color:#F7FCFF;">unescape()；</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;">一般我们都会设置cookie的过期时间，例如设置2天后过期：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"></span>
+</p>
+<pre class="prettyprint linenums lang-js">//获取当前时间 
+var date=new Date(); 
+var expiresDays=2; 
+date.setTime(date.getTime()+expiresDays*24*3600*1000); //<span style="font-family:Tahoma, Helvetica, Arial, 宋体, sans-serif;line-height:25.2000007629395px;">getTime() 方法返回时间，单位为毫秒&nbsp;</span> //将userId和userName两个cookie设置为2天后过期 
+document.cookie="userId=828;userName=hulk;expires="+date.toGMTString(); //<span style="font-family:Tahoma, Helvetica, Arial, 宋体, sans-serif;line-height:25.2000007629395px;background-color:#F7FCFF;">GMT_String是以GMT格式表示的时间字符串</span> </pre>
+<p>
+	<span style="font-size:14px;"><span style="color:#E53333;"><br />
+</span></span>
+</p>
+<p>
+	<span style="font-size:14px;"><span style="color:#E53333;">删除cookie的方法是将expireDays设置为负数，也就是一个过期了的时间。</span></span>
+</p>
+<span style="font-size:14px;">
+<pre class="prettyprint linenums lang-js">//获取当前时间 
+var date=new Date(); 
+//将date设置为过去的时间 
+date.setTime(date.getTime()-10000); 
+//将userId这个cookie删除 
+document.cookie="userId=828; expires="+date.toGMTString(); </pre>
+</span>
+<p>
+	<span style="font-size:14px;line-height:21px;color:#E53333;"><br />
+</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;color:#E53333;">而获取cookie，一般都是采用循环该网站下的所有cookie，遍历查找：</span>
+</p>
+<p>
+	<span style="font-size:14px;line-height:21px;"></span>
+</p>
+<pre class="prettyprint linenums lang-js">//设置两个cookie 
+document.cookie="userId=828"; 
+document.cookie="userName=hulk"; 
+//获取cookie字符串 
+var strCookie=document.cookie; 
+//将多cookie切割为多个名/值对 
+var arrCookie=strCookie.split("; "); 
+var userId; 
+//遍历cookie数组，处理每个cookie对 
+for(var i=0;i&lt;arrCookie.length;i++){ 
+var arr=arrCookie[i].split("="); 
+//找到名称为userId的cookie，并返回它的值 
+if("userId"==arr[0]){ 
+userId=arr[1]; 
+break; 
+} 
+} 
+alert(userId); </pre>
+<div>
+	<br />
+</div></p></div><!-- mycontent-info --></div><!-- line --><div style="padding:20px;" class="ds-thread" data-thread-key="172" data-title="由新手引导特效想到的" data-url=""></div></div><div class="xb3 myright"><div class="line"><div class="xb12 xl12"><h4 class="icon-globe bg-main"> 图片新闻</h4><div class="banner myblock" data-pointer="1" data-style="border-main"><div class="carousel"><div class="item newsone"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newstwo"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsthree"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfour"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div><div class="item newsfive"><img src="/Public/images/123.jpg" class="img-responsive" alt=""><p></p></div></div></div></div><!-- 图片新闻 --><div class="x12"><div class="line myblock"><h4 class="icon-list bg-main"> 阅读排行</h4><ul><li><a href="/content_152.html"><i class=" icon-caret-right"></i>1初学SEO</a><span>(阅读64)</span></li></ul><ul><li><a href="/content_156.html"><i class=" icon-caret-right"></i>2解决css3翘边阴影z-ind</a><span>(阅读63)</span></li></ul><ul><li><a href="/content_165.html"><i class=" icon-caret-right"></i>3由js图片预加载想到的</a><span>(阅读45)</span></li></ul><ul><li><a href="/content_157.html"><i class=" icon-caret-right"></i>4关于meta跑到body里的问</a><span>(阅读44)</span></li></ul><ul><li><a href="/content_142.html"><i class=" icon-caret-right"></i>5web语义化的理解</a><span>(阅读37)</span></li></ul><ul><li><a href="/content_147.html"><i class=" icon-caret-right"></i>6Thinkphp后台登录验证码</a><span>(阅读36)</span></li></ul><ul><li><a href="/content_163.html"><i class=" icon-caret-right"></i>7前端笔试题总结一</a><span>(阅读36)</span></li></ul><ul><li><a href="/content_143.html"><i class=" icon-caret-right"></i>8安装nodejs expres</a><span>(阅读34)</span></li></ul><ul><li><a href="/content_146.html"><i class=" icon-caret-right"></i>9 FTP连接 530 User</a><span>(阅读34)</span></li></ul><ul><li><a href="/content_169.html"><i class=" icon-caret-right"></i>10由大图首页想到的</a><span>(阅读33)</span></li></ul></div></div><!-- read --><!-- 我的标签 --><div class="x12 mytags"><div class="line mytaglist"><a href="/list_142_152_36.html"><span><span style="font-size:12px;">web语义化</span>(2)</span></a><a href="/list_143_37.html"><span><span style="font-size:11px;">nodejs</span>(1)</span></a><a href="/list_144_147_38.html"><span><span style="font-size:12px;">thinkphp</span>(2)</span></a><a href="/list_145_146_39.html"><span><span style="font-size:12px;">ftp</span>(2)</span></a><a href="/list_146_40.html"><span><span style="font-size:11px;"></span>(1)</span></a><a href="/list_147_41.html"><span><span style="font-size:11px;">验证码不显示</span>(1)</span></a><a href="/list_148_149_150_151_42.html"><span><span style="font-size:14px;">jsmvc</span>(4)</span></a><a href="/list_148_149_150_151_43.html"><span><span style="font-size:14px;">实习简历</span>(4)</span></a><a href="/list_148_149_150_151_168_44.html"><span><span style="font-size:15px;">javascript</span>(5)</span></a><a href="/list_152_45.html"><span><span style="font-size:11px;">SEO</span>(1)</span></a><a href="/list_152_46.html"><span><span style="font-size:11px;">代码优化</span>(1)</span></a><a href="/list_153_154_155_156_169_47.html"><span><span style="font-size:15px;">CSS3</span>(5)</span></a><a href="/list_153_154_155_156_48.html"><span><span style="font-size:14px;">翘边阴影</span>(4)</span></a><a href="/list_157_49.html"><span><span style="font-size:11px;">编码格式</span>(1)</span></a><a href="/list_157_50.html"><span><span style="font-size:11px;">utf8无BOM</span>(1)</span></a><a href="/list_157_160_164_51.html"><span><span style="font-size:13px;">前端</span>(3)</span></a><a href="/list_158_159_166_52.html"><span><span style="font-size:13px;">博客改动记录</span>(3)</span></a><a href="/list_160_162_163_53.html"><span><span style="font-size:13px;">前端笔试题笔记</span>(3)</span></a><a href="/list_164_54.html"><span><span style="font-size:11px;">css</span>(1)</span></a><a href="/list_165_55.html"><span><span style="font-size:11px;">js预加载</span>(1)</span></a><a href="/list_165_172_56.html"><span><span style="font-size:12px;">jscookie</span>(2)</span></a><a href="/list_167_57.html"><span><span style="font-size:11px;">mylife</span>(1)</span></a><a href="/list_167_58.html"><span><span style="font-size:11px;">大学生活</span>(1)</span></a><a href="/list_169_59.html"><span><span style="font-size:11px;">网页设计</span>(1)</span></a><a href="/list_170_60.html"><span><span style="font-size:11px;">js鼠标事件</span>(1)</span></a><a href="/list_171_61.html"><span><span style="font-size:11px;">GZIP</span>(1)</span></a><a href="/list_172_62.html"><span><span style="font-size:11px;">引导特效</span>(1)</span></a></div></div><!-- 文章档案 --><div class="x12"><div class="line myblock"><h4 class="icon-table bg-main dangan"> 文章档案</h4><ul><li><a href="/list_172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504.html"><i class="icon-th"></i>2015年04月 </a><span>(14篇)</span></li></ul><ul><li><a href="/list_172_171_170_169_168_167_166_165_164_163_159_158_157_156_201504151_147_146_144_143_142_201503.html"><i class="icon-th"></i>2015年03月 </a><span>(6篇)</span></li></ul></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-comments bg-main"> 最新评论</h4><!-- 多说最新评论 start --><div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div><!-- 多说最新评论 end --></div></div><!-- 最新评论 --><div class="x12"><div class="line myblock"><h4 class="icon-user bg-main"> 访客统计</h4><p class="text-center"><a href="http://info.flagcounter.com/7MfP"><img src="http://s06.flagcounter.com/count2/7MfP/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_8/viewers_3/labels_0/pageviews_1/flags_0/" alt="Flag Counter" border="0"></a></p></div></div></div></div></div><script type="text/javascript">    var tourl = "/Index/Index/getTXnews.html";
+    function AddFavorite(sURL, sTitle)
+    { try{
+            window.external.addFavorite(sURL, sTitle);
+         }catch (e){ try{
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                        }catch (e){alert("加入收藏失败，请使用Ctrl+D进行添加");}}}
+    var duoshuoQuery = {short_name:"mingcms"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script><!-- 页脚 --><div class="layout myfoot"><p class="text-center"><a href="./sitemap.html" target="_blank" class="icon-money"> 网站地图</a><a href="/./list_23.html" target="_blank" class=" icon-cog"> 修改日志</a><a href="http://dn-mingzi.qbox.me/" target="_blank" class="icon-home"> 我的主页7.0</a><a href="http://www.ymblog.net/public/demo/class2" target="_blank" class="icon-check"> 班级主页2.0</a></p><p class="text-center">&copy;版权所有 2014-2015 <a href="http://myfirsthome.sinaapp.com" target="_blank">Ming依然</a></p></div><script src="/Public/js/jquery.js"></script><script src="/Public/js/pintuer.js"></script><script src="/Public/js/index.js"></script></body></html>

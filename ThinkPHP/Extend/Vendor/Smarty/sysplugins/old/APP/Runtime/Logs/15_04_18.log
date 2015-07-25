@@ -1,0 +1,213 @@
+[ 2015-04-18T23:59:37+08:00 ] 118.251.170.141 /Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+
+[ 2015-04-18T23:59:53+08:00 ] 118.251.170.141 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `user` ORDER BY time DESC  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='165' [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='165' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='164' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='164' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='163' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='163' [ RunTime:0.015625s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='159' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='23' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='159' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='158' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='23' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='158' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='157' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='157' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='156' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='156' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='152' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='152' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='151' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='0' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='151' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='147' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='15' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='147' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='146' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='146' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='144' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='15' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='144' [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='143' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='143' [ RunTime:0.015625s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_attr AS a, attr AS b WHERE a.aid = b.id AND a. bid='142' [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `cate` WHERE ( 1=1 AND id='12' ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: mapping_order D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 188 行.
+NOTIC: [8] Undefined index: mapping_limit D:\boke\tp_blog\ThinkPHP\Extend\Model\RelationModel.class.php 第 189 行.
+SQL: SELECT b.* FROM blog_tags AS a, tags AS b WHERE a.tid = b.id AND a. bid='142' [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`imgUrl`,`title`,`content` FROM `user` ORDER BY time DESC LIMIT 4   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] Missing argument 2 for TagLib::parseXmlAttr(), called in D:\boke\tp_blog\APP\Modules\Index\TagLib\TagLibYm.class.php on line 15 and defined D:\boke\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 80 行.
+NOTIC: [8] Undefined variable: tag D:\boke\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined index:  D:\boke\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 91 行.
+NOTIC: [8] Undefined variable: tag D:\boke\tp_blog\ThinkPHP\Lib\Template\TagLib.class.php 第 92 行.
+SQL: SHOW COLUMNS FROM `cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cate` ORDER BY sort ASC LIMIT 4   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`clicknum` FROM `user` ORDER BY clicknum DESC LIMIT 10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `blog_tags` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `blog_tags`  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 36 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 37 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 38 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 39 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 40 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 41 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 42 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 43 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 44 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 45 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 46 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 47 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 48 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 49 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 50 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 51 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 52 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 53 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 54 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 55 )  [ RunTime:0.000000s ]
+SQL: SELECT `bid` FROM `blog_tags` WHERE ( `tid` = 56 )  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+NOTIC: [8] Undefined offset: 0 D:\boke\tp_blog\APP\Modules\Index\Widget\TagWidget.class.php 第 35 行.
+SQL: SHOW COLUMNS FROM `tags` [ RunTime:0.015625s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 36 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 37 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 38 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 39 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 40 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 41 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 42 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 43 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 44 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 45 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 46 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 47 ) LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 48 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 49 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 50 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 51 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 52 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 53 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 54 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 55 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `tags` WHERE ( `id` = 56 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`time` FROM `user` ORDER BY time DESC  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: id D:\boke\tp_blog\APP\Runtime\Cache\Index\d65787cf5abc8df82be386d6a4b5ab95.php 第 1 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.140625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.140625s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.015625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2015-04-18T23:59:54+08:00 ] 118.251.170.141 /Index/Index/getTXnews.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+

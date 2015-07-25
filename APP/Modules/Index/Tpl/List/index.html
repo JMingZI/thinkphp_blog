@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <title>{$parentl.0.name} - Ming依然</title>
+    <meta name="keywords" content="Ming依然，MingCMS，MingBlog，个人博客" />
+    <meta name="description" content="这是MingZI的个人博客，记录学习点滴，web前端，php学习，ps学习的过程" />
+<include file='Common:header' />
+	<div class="layout mybanner">
+        <div class="banner">
+        	<if condition="$parentl[0]['name'] eq '随笔'">
+        	<img src="http://7u2jxw.com1.z0.glb.clouddn.com/mylist_suibi.jpg" class="img-responsive">
+        	<elseif condition="$parentl[0]['name'] eq 'web前端'"/>
+        	<img src="http://7u2jxw.com1.z0.glb.clouddn.com/mylist_web.jpg" class="img-responsive">
+        	<elseif condition="$parentl[0]['name'] eq 'PHP'"/>
+        	<img src="http://7u2jxw.com1.z0.glb.clouddn.com/mylist_php.jpg" class="img-responsive">
+        	<elseif condition="$parentl[0]['name'] eq 'MyLife'"/>
+        	<img src="http://7u2jxw.com1.z0.glb.clouddn.com/mylist_life.jpg" class="img-responsive">
+        	</elseif>
+        	</if>
+        </div>
+	</div>
+	<div class="layout bg mylist">
+		<div class="line">
+			<div class="xb7 xb1-move myleft">
+			<foreach name='blog_list' item='v_list'>
+				<h3>
+					<php>$num=0;</php>分类- 
+					<foreach name='parentl' item='vl'>
+					<if condition='$num eq 0'>
+					<a href="{:U('/list_'.$vl['id'])}">{$vl.name}</a>
+					</if>
+					<php>$num++;</php>
+					</foreach> -{$v_list.name}
+				</h3>
+				<div class="line border-bottom">
+		            <div class="x12 mytitle" style="border-color:{$v_list.attr.0.color};">
+		                <h4><a href="{:U('/content_'. $v_list['id'])}"><strong>{$v_list.title}</strong></a></h4>
+		                <p><i class="icon-file"></i> 分类：
+                        <span class="tag bg-main">{$parentl.0.name}</span>  
+                        时间：{$v_list.time|date='Y/m/d H:i',###} | {$v_list.time|days=###} 
+                        <a href="{:U('/content_'. $v_list['id'])}" class="float-right"><i class="icon-share"></i> 阅读全文</a></p>
+		            </div>
+		        </div>
+		        <if condition="$v_list['imgUrl'] eq '__PUBLIC__/uploadImg/artical.jpg'">
+		        <div class="line mysummary">
+                    <div class="xb12 xl12 zhaiyao">
+                        <p class="icon-quote-left">{$v_list.content|change_substr=###, 200}</p>
+                        <small><i class="icon-comment"></i> 评论：<span class="ds-thread-count" data-thread-key="{$v_list.id}" data-count-type="comments"></span> | <i class="icon-eye"></i> 阅读： {$v_list.clicknum} | <i class="icon-user"></i> 作者：{$v_list.name}</small>
+                    </div>
+                </div>
+		        <elseif condition="$v_list['imgUrl'] neq '__PUBLIC__/uploadImg/artical.jpg'" />
+                <div class="line mysummary">
+                    <div class="xb4 xl12">
+                      <div class="img">
+                        <img src="{$v_list.imgUrl}" class="img-responsive radius" alt="{$v_list.title}">
+                      </div>
+                    </div>
+                    <div class="xb8 xl12 zhaiyao">
+                        <p class="icon-quote-left">{$v_list.content|change_substr=###, 200}</p>
+                        <small><i class="icon-comment"></i> 评论：<span class="ds-thread-count" data-thread-key="{$v_list.id}" data-count-type="comments"></span> | <i class="icon-eye"></i> 阅读： {$v_list.clicknum} | <i class="icon-user"></i> 作者：{$v_list.name}</small>
+                    </div>
+                </div>
+                </elseif>
+                </if>
+			</foreach>
+			<div class="page">{$page}</div>
+		</div><!-- xb7 -->
+		<include file='Common:right' />
+		</div><!-- line -->
+	</div><!-- mylist -->
+
+<include file='Common:footer' />
+
